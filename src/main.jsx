@@ -17,6 +17,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  TrendingUp,
   UsersRound
 } from "lucide-react";
 import "./styles.css";
@@ -109,15 +110,35 @@ const experience = [
 ];
 
 const outcomes = [
-  { value: "12+", label: "Years building enterprise systems" },
-  { value: "75%", label: "Performance gain on critical BI platform" },
-  { value: "60%+", label: "Reporting cycle reduction through Azure BI automation" },
-  { value: "100%", label: "Client satisfaction while leading delivery at Ebryx" }
+  { value: "12+", label: "Years building enterprise systems", detail: ".NET, Azure, web, mobile, BI" },
+  { value: "75%", label: "Performance gain", detail: "Critical BI platform turnaround" },
+  { value: "60%+", label: "Reporting cycle reduction", detail: "Azure BI automation impact" },
+  { value: "100%", label: "Client satisfaction", detail: "Delivery leadership at Ebryx" }
 ];
 
 const certifications = [
   "PL-100 - Microsoft Power Platform App Maker",
   "DP-203 - Azure Data Engineer Associate"
+];
+
+const signatureStack = [".NET 8", "Azure", "Clean Architecture", "SQL Server", "Power BI", "CI/CD"];
+
+const serviceLines = [
+  {
+    icon: Cloud,
+    title: "Cloud Modernization",
+    body: "Azure-first architecture, API management, integration design, and platform delivery."
+  },
+  {
+    icon: Database,
+    title: "BI & Data Platforms",
+    body: "Data Factory, Data Lake, SSIS, Power BI, and reporting pipelines built for business velocity."
+  },
+  {
+    icon: UsersRound,
+    title: "Engineering Leadership",
+    body: "Architecture standards, code review discipline, Agile delivery, and mentoring systems."
+  }
 ];
 
 function App() {
@@ -140,6 +161,11 @@ function App() {
               <h1>{profile.name}</h1>
               <p className="role">{profile.role}</p>
               <p className="summary">{profile.summary}</p>
+              <div className="stack-strip" aria-label="Signature technology stack">
+                {signatureStack.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
               <div className="hero__actions">
                 <a className="button button--primary" href={`mailto:${profile.email}`}>
                   <Mail size={18} aria-hidden="true" />
@@ -153,7 +179,14 @@ function App() {
             </div>
 
             <aside className="signal-panel" aria-label="Professional highlights">
+              <div className="signal-panel__top">
+                <span>Senior delivery signal</span>
+                <strong>Architecting outcomes, not just applications</strong>
+              </div>
               <div className="architecture-visual" aria-hidden="true">
+                <div className="flow-line flow-line--one" />
+                <div className="flow-line flow-line--two" />
+                <div className="flow-line flow-line--three" />
                 <div className="node node--core"><Code2 size={28} /></div>
                 <div className="node node--cloud"><Cloud size={24} /></div>
                 <div className="node node--data"><Database size={24} /></div>
@@ -172,8 +205,20 @@ function App() {
       <section className="metrics" aria-label="Career outcomes">
         {outcomes.map((item) => (
           <article className="metric" key={item.label}>
+            <TrendingUp size={20} aria-hidden="true" />
             <strong>{item.value}</strong>
             <span>{item.label}</span>
+            <small>{item.detail}</small>
+          </article>
+        ))}
+      </section>
+
+      <section className="section services" aria-label="Consulting strengths">
+        {serviceLines.map(({ icon: Icon, title, body }) => (
+          <article className="service" key={title}>
+            <Icon size={24} aria-hidden="true" />
+            <h2>{title}</h2>
+            <p>{body}</p>
           </article>
         ))}
       </section>
