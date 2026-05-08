@@ -39,7 +39,7 @@ const profile = {
   email: "inamgcu@gmail.com",
   linkedin: "https://www.linkedin.com/in/hafiz-inam-ul-haq-605b611a/",
   summary:
-    "Solution Architect and .NET Technology Consultant with 12+ years designing enterprise .NET, Azure, SQL Server, integration, and data transformation platforms."
+    "12+ years designing enterprise .NET, Azure, SQL, integration, and data platforms."
 };
 
 const competencies = [
@@ -374,7 +374,7 @@ function App() {
       <section className="section style-section">
         <div className="section__intro">
           <span className="section-kicker">Working Style</span>
-          <h2>Senior engineering judgment with a consulting mindset.</h2>
+          <h2>Senior engineering judgment, consulting mindset.</h2>
         </div>
         <div className="style-grid">
           {workingStyle.map(({ icon: Icon, title, body }) => (
@@ -390,7 +390,7 @@ function App() {
       <section className="section tools-section" id="tools">
         <div className="section__intro">
           <span className="section-kicker">Tools & Platforms</span>
-          <h2>Everyday delivery toolkit across code, cloud, collaboration, and AI-assisted engineering.</h2>
+          <h2>Code, cloud, collaboration, and AI toolkit.</h2>
         </div>
         <div className="tool-highlight-grid" aria-label="Tools and platforms">
           {toolHighlights.map(({ icon: Icon, label }) => (
@@ -418,7 +418,7 @@ function App() {
       <section className="section" id="expertise">
         <div className="section__intro">
           <span className="section-kicker">Core Competencies</span>
-          <h2>Architecture leadership with hands-on engineering depth.</h2>
+          <h2>Architecture leadership with hands-on depth.</h2>
         </div>
         <div className="competency-grid">
           {competencies.map(({ icon: Icon, label }) => (
@@ -434,7 +434,7 @@ function App() {
         <div className="experience-panel">
           <div className="section__intro sticky">
             <span className="section-kicker">Experience</span>
-            <h2>From hands-on engineering to solution architecture ownership.</h2>
+            <h2>Architecture ownership.</h2>
             <p>
               A track record across stakeholder alignment, architecture decisions, .NET modernization,
               Azure-backed platforms, API decomposition, SQL performance, and data transformation.
@@ -487,7 +487,7 @@ function App() {
       <section className="section skills-band" id="skills">
         <div className="section__intro">
           <span className="section-kicker">Technical Skills</span>
-          <h2>Solution architecture grounded in .NET, Azure, SQL, APIs, and delivery governance.</h2>
+          <h2>.NET, Azure, SQL, APIs, and delivery governance.</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map((group) => (
@@ -544,7 +544,7 @@ function App() {
       <section className="contact" id="contact">
         <div>
           <span className="section-kicker">Contact</span>
-          <h2>Let's build dependable enterprise software.</h2>
+          <h2>Build dependable enterprise software.</h2>
           <p>
             Available for solution architecture, .NET modernization, Azure platform design,
             integration strategy, delivery governance, and engineering team enablement.
