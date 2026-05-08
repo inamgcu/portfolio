@@ -334,53 +334,23 @@ h1 {
   font-weight: 800;
 }
 
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.button {
-  min-height: 46px;
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-weight: 800;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.button--primary {
-  color: #15212f;
-  background: linear-gradient(135deg, #f8d56b, #ffffff);
-  box-shadow: 0 14px 34px rgba(248, 213, 107, 0.18);
-}
-
-.button--ghost {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
 .hero-board {
-  width: min(720px, 100%);
-  margin: 24px auto 0;
+  width: 100%;
+  margin: 22px auto 0;
   padding: 11px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  display: block;
+  display: grid;
+  justify-items: center;
 }
 
 .signal-grid {
+  width: min(700px, 100%);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 170px));
+  justify-content: center;
   gap: 0;
+  margin: 0 auto;
 }
 
 .signal-card {

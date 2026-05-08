@@ -314,27 +314,6 @@ function App() {
                   <span key={item}>{item}</span>
                 ))}
               </div>
-              <div className="hero__actions">
-                <a className="button button--primary" href={`mailto:${profile.email}`}>
-                  <Mail size={18} aria-hidden="true" />
-                  Contact
-                </a>
-                <a className="button button--ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
-                  <Linkedin size={18} aria-hidden="true" />
-                  LinkedIn
-                </a>
-              </div>
-              <div className="hero-board" aria-label="Delivery focus">
-                <div className="signal-grid">
-                  {heroSignals.map(({ icon: Icon, label, detail }) => (
-                    <article className="signal-card" key={label}>
-                      <Icon size={19} aria-hidden="true" />
-                      <strong>{label}</strong>
-                      <span>{detail}</span>
-                    </article>
-                  ))}
-                </div>
-              </div>
             </div>
             <div className="hero__side">
               <aside className="experience-canvas" aria-label="Experience highlight">
@@ -364,6 +343,17 @@ function App() {
                   <li><span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span></li>
                 </ul>
               </div>
+            </div>
+          </div>
+          <div className="hero-board" aria-label="Delivery focus">
+            <div className="signal-grid">
+              {heroSignals.map(({ icon: Icon, label, detail }) => (
+                <article className="signal-card" key={label}>
+                  <Icon size={19} aria-hidden="true" />
+                  <strong>{label}</strong>
+                  <span>{detail}</span>
+                </article>
+              ))}
             </div>
           </div>
         </div>
