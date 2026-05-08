@@ -75,6 +75,8 @@ const skillGroups = [
 const experience = [
   {
     company: "tkxel",
+    logo: "https://logo.clearbit.com/tkxel.com",
+    initials: "TX",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
     impact: "Consulting on secure, scalable enterprise delivery across Azure and .NET ecosystems.",
@@ -87,6 +89,8 @@ const experience = [
   },
   {
     company: "Ebryx",
+    logo: "https://logo.clearbit.com/ebryx.com",
+    initials: "EX",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
     impact: "Owned technical direction, client translation, and delivery standards for enterprise .NET 8 applications.",
@@ -98,6 +102,8 @@ const experience = [
   },
   {
     company: "Confiz Limited",
+    logo: "https://logo.clearbit.com/confiz.com",
+    initials: "CF",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
     impact: "Grew from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, and data-heavy enterprise systems.",
@@ -111,6 +117,8 @@ const experience = [
   },
   {
     company: "Karzansoft",
+    logo: "https://logo.clearbit.com/karzansoft.com",
+    initials: "KS",
     period: "August 2013 - March 2014",
     role: "Software Engineer",
     impact: "Strengthened product features and support workflows for a car leasing platform.",
@@ -119,6 +127,8 @@ const experience = [
   },
   {
     company: "Code5 Technologies",
+    logo: "https://logo.clearbit.com/code5tech.com",
+    initials: "C5",
     period: "November 2012 - May 2013",
     role: "Software Engineer",
     impact: "Built an interactive kiosk product blending desktop software, camera integration, and social publishing.",
@@ -350,9 +360,23 @@ function App() {
             <article className="job" key={`${job.company}-${job.role}`}>
               <div className="job__marker" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
               <div className="job__header">
-                <div>
-                  <h3>{job.company}</h3>
-                  <p>{job.role}</p>
+                <div className="job__identity">
+                  <div className="company-logo" aria-hidden="true">
+                    <img
+                      src={job.logo}
+                      alt=""
+                      loading="lazy"
+                      onError={(event) => {
+                        event.currentTarget.removeAttribute("src");
+                        event.currentTarget.style.display = "none";
+                      }}
+                    />
+                    <span>{job.initials}</span>
+                  </div>
+                  <div>
+                    <h3>{job.company}</h3>
+                    <p>{job.role}</p>
+                  </div>
                 </div>
                 <span>{job.period}</span>
               </div>
