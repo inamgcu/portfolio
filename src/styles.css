@@ -235,10 +235,7 @@ h1 {
 
 .hero-board {
   margin-top: 34px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  gap: 14px;
-  align-items: stretch;
+  display: block;
 }
 
 .signal-grid {
@@ -279,56 +276,6 @@ h1 {
   line-height: 1.45;
   font-size: 0.88rem;
   font-weight: 650;
-}
-
-.delivery-map {
-  position: relative;
-  min-height: 142px;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
-  align-items: center;
-  padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(128, 198, 217, 0.16), rgba(255, 255, 255, 0.06));
-}
-
-.delivery-map::before {
-  content: "";
-  position: absolute;
-  left: 34px;
-  right: 34px;
-  top: 50%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(128, 198, 217, 0), rgba(128, 198, 217, 0.7), rgba(248, 213, 107, 0));
-}
-
-.map-node {
-  position: relative;
-  z-index: 1;
-  min-height: 100px;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  color: #edf5f7;
-  text-align: center;
-  background: rgba(8, 17, 27, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.map-node svg {
-  color: #80c6d9;
-}
-
-.map-node span {
-  font-size: 0.78rem;
-  line-height: 1.2;
-  font-weight: 800;
 }
 
 .metrics,
@@ -1138,10 +1085,6 @@ h1 {
 }
 
 @media (max-width: 980px) {
-  .hero-board {
-    grid-template-columns: 1fr;
-  }
-
   .signal-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1200,16 +1143,10 @@ h1 {
     margin-top: 26px;
   }
 
-  .signal-grid,
-  .delivery-map {
+  .signal-grid {
     grid-template-columns: 1fr;
   }
 
-  .delivery-map::before {
-    display: none;
-  }
-
-  .map-node,
   .signal-card {
     min-height: 92px;
   }

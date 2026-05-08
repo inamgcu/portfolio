@@ -194,14 +194,6 @@ const heroSignals = [
   }
 ];
 
-const deliveryMap = [
-  { icon: Target, label: "Business Goals" },
-  { icon: Network, label: "APIs & Integration" },
-  { icon: Code2, label: ".NET Services" },
-  { icon: Cloud, label: "Azure + SQL" },
-  { icon: ShieldCheck, label: "Delivery Governance" }
-];
-
 const serviceLines = [
   {
     icon: Layers3,
@@ -345,14 +337,6 @@ function App() {
                       <strong>{label}</strong>
                       <span>{detail}</span>
                     </article>
-                  ))}
-                </div>
-                <div className="delivery-map" aria-label="Architecture delivery map">
-                  {deliveryMap.map(({ icon: Icon, label }) => (
-                    <div className="map-node" key={label}>
-                      <Icon size={17} aria-hidden="true" />
-                      <span>{label}</span>
-                    </div>
                   ))}
                 </div>
               </div>
