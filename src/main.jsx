@@ -43,10 +43,10 @@ const profile = {
 };
 
 const competencies = [
-  { icon: Layers3, label: "Architecture Vision" },
-  { icon: Target, label: "Trade-off Analysis" },
-  { icon: UsersRound, label: "Stakeholder Alignment" },
-  { icon: Network, label: "Integration Architecture" },
+  { icon: Layers3, label: "Solution Design" },
+  { icon: Target, label: "Decision Trade-offs" },
+  { icon: UsersRound, label: "Client Communication" },
+  { icon: Network, label: "API & Integration Design" },
   { icon: Code2, label: ".NET / ASP.NET Core" },
   { icon: Cloud, label: "Azure Cloud Solutions" },
   { icon: Database, label: "SQL Server Performance" },
@@ -55,8 +55,8 @@ const competencies = [
 
 const skillGroups = [
   {
-    title: "Solution Architecture",
-    items: ["Architecture Vision", "Requirements Analysis", "Trade-off Analysis", "ADRs", "System Decomposition", "Design Reviews", "Technical Roadmaps", "Stakeholder Communication"]
+    title: "Architecture & Design",
+    items: ["Solution Design", "Requirements Mapping", "API Decomposition", "Integration Design", "Design Reviews", "Technical Roadmaps", "Architecture Decisions", "Stakeholder Communication"]
   },
   {
     title: ".NET Engineering",
@@ -80,7 +80,7 @@ const experience = [
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
     impact: "Shaping architecture direction for secure, scalable enterprise platforms with a .NET and Azure lens.",
-    stack: ["Architecture Vision", ".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
+    stack: ["Solution Design", ".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
     points: [
       "Define solution direction for enterprise .NET and Azure systems, aligning business goals with integration needs, security constraints, and long-term maintainability.",
       "Document architecture decisions, review downstream design choices, and guide API boundaries, SQL access patterns, CI/CD setup, and Azure deployment planning.",
@@ -94,7 +94,7 @@ const experience = [
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
     impact: "Owned architecture patterns, technical standards, and client-facing delivery decisions for enterprise .NET 8 applications.",
-    stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Stakeholder Alignment"],
+    stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Client Communication"],
     points: [
       "Led solution design for enterprise-grade .NET 8 applications, establishing architecture patterns, technical standards, and delivery guardrails.",
       "Partnered with client stakeholders to clarify business goals, decompose requirements, evaluate trade-offs, and translate product needs into technical roadmaps.",
@@ -169,13 +169,13 @@ const recognitions = [
   }
 ];
 
-const signatureStack = ["Solution Architecture", ".NET 8", "Azure", "Integration Architecture", "SQL Server", "Data Transformation"];
+const signatureStack = ["Solution Design", ".NET 8", "Azure", "API Integration", "SQL Server", "Data Transformation"];
 
 const serviceLines = [
   {
     icon: Layers3,
-    title: "Solution Architecture",
-    body: "Architecture vision, trade-off analysis, technical roadmaps, ADRs, and stakeholder alignment."
+    title: "Practical Solution Design",
+    body: "Business goals translated into APIs, integrations, data flows, delivery constraints, and clear design decisions."
   },
   {
     icon: Code2,
@@ -250,8 +250,8 @@ const stackIcons = {
   "Azure DevOps": Workflow,
   "SQL Server": Database,
   "CI/CD": Workflow,
-  "Architecture Vision": Layers3,
-  "Stakeholder Alignment": UsersRound,
+  "Solution Design": Layers3,
+  "Client Communication": UsersRound,
   "Data Transformation": Database,
   "Clean Architecture": Layers3,
   DDD: Layers3,
