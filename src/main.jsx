@@ -75,7 +75,7 @@ const skillGroups = [
 const experience = [
   {
     company: "tkxel",
-    logoText: "tkxel",
+    logo: "/logos/tkxel.svg",
     logoClass: "logo-tkxel",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
@@ -89,7 +89,7 @@ const experience = [
   },
   {
     company: "Ebryx",
-    logoText: "Ebryx",
+    logo: "/logos/ebryx.png",
     logoClass: "logo-ebryx",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
@@ -102,7 +102,7 @@ const experience = [
   },
   {
     company: "Confiz Limited",
-    logoText: "Confiz",
+    logo: "/logos/confiz.png",
     logoClass: "logo-confiz",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
@@ -117,7 +117,7 @@ const experience = [
   },
   {
     company: "Karzansoft",
-    logoText: "Karzan",
+    logo: "/logos/karzansoft.png",
     logoClass: "logo-karzan",
     period: "August 2013 - March 2014",
     role: "Software Engineer",
@@ -127,7 +127,7 @@ const experience = [
   },
   {
     company: "Code5 Technologies",
-    logoText: "Code5",
+    logo: "/logos/code5.png",
     logoClass: "logo-code5",
     period: "November 2012 - May 2013",
     role: "Software Engineer",
@@ -362,7 +362,7 @@ function App() {
               <div className="job__header">
                 <div className="job__identity">
                   <div className={`company-logo ${job.logoClass}`} aria-hidden="true">
-                    <span>{job.logoText}</span>
+                    <img src={job.logo} alt="" loading="lazy" />
                   </div>
                   <div>
                     <h3>{job.company}</h3>

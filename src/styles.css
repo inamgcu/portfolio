@@ -627,68 +627,43 @@ h1 {
 .company-logo {
   position: relative;
   flex: 0 0 auto;
-  width: 86px;
-  height: 58px;
+  width: 112px;
+  height: 64px;
   display: grid;
   place-items: center;
   overflow: hidden;
   border: 1px solid rgba(21, 33, 47, 0.12);
   border-radius: 8px;
+  background: #ffffff;
   box-shadow: 0 12px 24px rgba(21, 33, 47, 0.08);
 }
 
-.company-logo span {
-  color: inherit;
-  font-weight: 900;
-  font-size: 1rem;
-  line-height: 1;
-  letter-spacing: 0;
+.company-logo img {
+  width: 86%;
+  height: 74%;
+  object-fit: contain;
 }
 
 .logo-tkxel {
-  color: #ffffff;
-  background: linear-gradient(135deg, #1b75bb, #29aae1);
-}
-
-.logo-tkxel span {
-  font-size: 1.08rem;
-  text-transform: lowercase;
+  background: linear-gradient(135deg, #0755e9, #10347e);
 }
 
 .logo-ebryx {
-  color: #ffffff;
-  background: linear-gradient(135deg, #1f2937, #ef4444);
-}
-
-.logo-ebryx span {
-  font-size: 1.02rem;
+  background: #111827;
 }
 
 .logo-confiz {
-  color: #ffffff;
-  background: linear-gradient(135deg, #e11d48, #f97316);
+  background: #f9fff6;
 }
 
-.logo-confiz span {
-  font-size: 0.98rem;
+.logo-karzan img {
+  width: 92%;
+  height: 78%;
 }
 
-.logo-karzan {
-  color: #ffffff;
-  background: linear-gradient(135deg, #174d3d, #6f7f43);
-}
-
-.logo-karzan span {
-  font-size: 0.9rem;
-}
-
-.logo-code5 {
-  color: #15212f;
-  background: linear-gradient(135deg, #f8d56b, #ffffff);
-}
-
-.logo-code5 span {
-  font-size: 1rem;
+.logo-code5 img {
+  width: 84%;
+  height: 84%;
 }
 
 .job h3 {
