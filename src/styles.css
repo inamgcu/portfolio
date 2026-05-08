@@ -89,9 +89,9 @@ main {
   width: min(320px, 100%);
   max-width: 100%;
   margin-top: 0;
-  padding: 10px;
+  padding: 9px;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   align-items: start;
   border: 1px solid rgba(128, 198, 217, 0.24);
   border-radius: 8px;
@@ -102,11 +102,11 @@ main {
 }
 
 .contact-canvas__heading {
-  min-height: 30px;
+  min-height: 28px;
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  padding: 7px 10px;
+  padding: 6px 9px;
   color: #f8d56b;
   background: rgba(248, 213, 107, 0.12);
   font-size: 0.78rem;
@@ -118,7 +118,7 @@ main {
 
 .contact-canvas__items {
   display: grid;
-  gap: 6px;
+  gap: 5px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -131,16 +131,16 @@ main {
 .contact-canvas__items a,
 .contact-canvas__items span {
   width: 100%;
-  min-height: 32px;
+  min-height: 28px;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 9px;
+  padding: 6px 8px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(237, 245, 247, 0.84);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 760;
   line-height: 1;
   white-space: nowrap;
@@ -159,7 +159,7 @@ main {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(560px, 560px);
+  grid-template-columns: minmax(0, 1fr) minmax(620px, 620px);
   gap: 14px;
   align-items: start;
   padding: 28px 0 0;
@@ -222,7 +222,7 @@ h1 {
   background: linear-gradient(125deg, #ffffff 0%, #80c6d9 46%, #f8d56b 92%);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: clamp(2.52rem, 3vw, 3.08rem);
+  font-size: clamp(2.28rem, 2.78vw, 2.86rem);
   line-height: 0.96;
   letter-spacing: 0;
   max-width: none;
@@ -231,7 +231,7 @@ h1 {
 
 .role {
   color: #f8d56b;
-  font-size: 1.3rem;
+  font-size: 1.18rem;
   font-weight: 800;
   margin-bottom: 18px;
   white-space: nowrap;
@@ -247,8 +247,8 @@ h1 {
 
 .experience-canvas {
   position: relative;
-  min-height: 246px;
-  padding: 16px;
+  min-height: 214px;
+  padding: 14px;
   display: grid;
   align-content: start;
   overflow: hidden;
@@ -265,8 +265,8 @@ h1 {
   position: relative;
   z-index: 1;
   width: fit-content;
-  margin-bottom: 10px;
-  padding: 7px 10px;
+  margin-bottom: 8px;
+  padding: 6px 9px;
   border-radius: 999px;
   color: #80c6d9;
   background: rgba(255, 255, 255, 0.08);
@@ -282,7 +282,7 @@ h1 {
   position: relative;
   z-index: 1;
   color: #f8d56b;
-  font-size: clamp(2.65rem, 4vw, 3.05rem);
+  font-size: clamp(2.4rem, 3.5vw, 2.82rem);
   line-height: 0.95;
   letter-spacing: 0;
   white-space: nowrap;
@@ -291,10 +291,10 @@ h1 {
 .experience-canvas p {
   position: relative;
   z-index: 1;
-  margin: 12px 0 0;
+  margin: 9px 0 0;
   color: rgba(237, 245, 247, 0.78);
   font-weight: 760;
-  line-height: 1.55;
+  line-height: 1.42;
 }
 
 .canvas-stack {
@@ -302,17 +302,17 @@ h1 {
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
+  gap: 7px;
+  margin-top: 12px;
 }
 
 .canvas-stack span {
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  padding: 7px 9px;
+  padding: 6px 8px;
   color: #edf5f7;
   background: rgba(8, 17, 27, 0.28);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 800;
 }
 
@@ -1303,7 +1303,7 @@ h1 {
   }
 
   .signal-grid {
-    grid-template-columns: 1fr;
+    display: flex;
   }
 
   .signal-card {
