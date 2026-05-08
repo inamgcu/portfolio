@@ -171,6 +171,37 @@ const recognitions = [
 
 const signatureStack = ["Solution Design", ".NET 8", "Azure", "API Integration", "SQL Server", "Data Transformation"];
 
+const heroSignals = [
+  {
+    icon: Layers3,
+    label: "Solution Design",
+    detail: "Business goals into clear design decisions"
+  },
+  {
+    icon: Code2,
+    label: ".NET Modernization",
+    detail: "ASP.NET Core, Web API, Entity Framework"
+  },
+  {
+    icon: Workflow,
+    label: "Azure Delivery",
+    detail: "Service Bus, DevOps, Functions, API Management"
+  },
+  {
+    icon: Database,
+    label: "Data & SQL",
+    detail: "SQL tuning, data integration, transformation"
+  }
+];
+
+const deliveryMap = [
+  { icon: Target, label: "Business Goals" },
+  { icon: Network, label: "APIs & Integration" },
+  { icon: Code2, label: ".NET Services" },
+  { icon: Cloud, label: "Azure + SQL" },
+  { icon: ShieldCheck, label: "Delivery Governance" }
+];
+
 const serviceLines = [
   {
     icon: Layers3,
@@ -301,6 +332,25 @@ function App() {
                   <Linkedin size={18} aria-hidden="true" />
                   LinkedIn
                 </a>
+              </div>
+              <div className="hero-board" aria-label="Delivery focus">
+                <div className="signal-grid">
+                  {heroSignals.map(({ icon: Icon, label, detail }) => (
+                    <article className="signal-card" key={label}>
+                      <Icon size={19} aria-hidden="true" />
+                      <strong>{label}</strong>
+                      <span>{detail}</span>
+                    </article>
+                  ))}
+                </div>
+                <div className="delivery-map" aria-label="Architecture delivery map">
+                  {deliveryMap.map(({ icon: Icon, label }) => (
+                    <div className="map-node" key={label}>
+                      <Icon size={17} aria-hidden="true" />
+                      <span>{label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
