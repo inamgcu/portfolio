@@ -174,22 +174,22 @@ const heroSignals = [
   {
     icon: Layers3,
     label: "Solution Design",
-    detail: "Business goals into clear design decisions"
+    detail: "Business goals, constraints, trade-offs, and clear design decisions"
   },
   {
     icon: Code2,
     label: ".NET Modernization",
-    detail: "ASP.NET Core, Web API, Entity Framework"
+    detail: "ASP.NET Core, Web API, Entity Framework, and cleaner boundaries"
   },
   {
     icon: Workflow,
-    label: "Azure Delivery",
-    detail: "Service Bus, DevOps, Functions, API Management"
+    label: "Azure Integration",
+    detail: "Service Bus, Functions, API Management, DevOps, and cloud workflows"
   },
   {
     icon: Database,
     label: "Data & SQL",
-    detail: "SQL tuning, data integration, transformation"
+    detail: "SQL tuning, data integration, transformation, and reporting support"
   }
 ];
 
@@ -305,7 +305,7 @@ function App() {
 
           <div className="hero__grid">
             <div className="hero__copy">
-              <span className="eyebrow">Solution architecture - .NET - Azure transformation</span>
+              <span className="eyebrow">Solution architecture - .NET - Azure Integration</span>
               <h1>{profile.name}</h1>
               <p className="role">{profile.role}</p>
               <p className="summary">{profile.summary}</p>
@@ -380,7 +380,7 @@ function App() {
         ))}
       </section>
 
-      <section className="section style-section">
+      <section className="section style-section section-lined">
         <div className="section__intro">
           <span className="section-kicker">Working Style</span>
           <h2>Senior engineering judgment, consulting mindset.</h2>
@@ -396,7 +396,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section tools-section" id="tools">
+      <section className="section tools-section section-lined" id="tools">
         <div className="section__intro">
           <span className="section-kicker">Tools & Platforms</span>
           <h2>Code, cloud, collaboration, and AI toolkit.</h2>
@@ -424,7 +424,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section" id="expertise">
+      <section className="section section-lined" id="expertise">
         <div className="section__intro">
           <span className="section-kicker">Core Competencies</span>
           <h2>Architecture leadership with hands-on depth.</h2>
@@ -439,7 +439,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section experience-section" id="experience">
+      <section className="section experience-section section-lined" id="experience">
         <div className="experience-panel">
           <div className="section__intro sticky">
             <span className="section-kicker">Experience</span>
@@ -450,9 +450,9 @@ function App() {
             </p>
           </div>
           <div className="experience-stats" aria-label="Experience highlights">
-            <span><strong>5</strong> companies</span>
+            <span><strong>5</strong> Companies</span>
             <span><strong>10+</strong> Years</span>
-            <span><strong>3</strong> senior leadership roles</span>
+            <span><strong>3</strong> Senior Roles</span>
           </div>
         </div>
         <div className="timeline">
@@ -512,7 +512,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section proof">
+      <section className="section proof section-lined">
         <article>
           <Award size={24} aria-hidden="true" />
           <h2>Recognition & Certifications</h2>
