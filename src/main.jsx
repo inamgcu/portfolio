@@ -4,10 +4,12 @@ import {
   ArrowUpRight,
   Award,
   BadgeCheck,
+  Bot,
   BriefcaseBusiness,
   Cloud,
   Code2,
   Database,
+  FileJson,
   GitBranch,
   Github,
   KanbanSquare,
@@ -15,8 +17,10 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  MonitorCog,
   Network,
   Phone,
+  Send,
   ShieldCheck,
   Sparkles,
   TrendingUp,
@@ -163,16 +167,16 @@ const toolGroups = [
 ];
 
 const toolHighlights = [
-  { icon: Code2, label: "Visual Studio" },
-  { icon: Code2, label: "VS Code" },
+  { icon: MonitorCog, label: "Visual Studio" },
+  { icon: FileJson, label: "VS Code" },
   { icon: Github, label: "GitHub" },
   { icon: GitBranch, label: "Git" },
   { icon: Workflow, label: "Azure DevOps" },
   { icon: KanbanSquare, label: "JIRA" },
   { icon: Layers3, label: "Confluence" },
-  { icon: Network, label: "Postman" },
+  { icon: Send, label: "Postman" },
   { icon: Sparkles, label: "Cursor" },
-  { icon: Sparkles, label: "Codex" },
+  { icon: Bot, label: "Codex" },
   { icon: Cloud, label: "SharePoint" }
 ];
 

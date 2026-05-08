@@ -130,10 +130,11 @@ h1 {
   background: linear-gradient(125deg, #102030 0%, #217187 48%, #c8553d 92%);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: clamp(3.4rem, 8.6vw, 8.4rem);
-  line-height: 0.9;
+  font-size: clamp(2.7rem, 5.9vw, 6.2rem);
+  line-height: 0.96;
   letter-spacing: 0;
-  max-width: 18ch;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .role {
@@ -269,7 +270,7 @@ h1 {
 
 .tool-highlight-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1px;
   margin-bottom: 16px;
   border: 1px solid rgba(21, 33, 47, 0.14);
@@ -290,6 +291,14 @@ h1 {
 
 .tool-highlight svg {
   color: #217187;
+}
+
+.tool-highlight svg {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  border-radius: 8px;
+  background: rgba(33, 113, 135, 0.12);
 }
 
 .tool-highlight span {
@@ -672,7 +681,8 @@ h1 {
   }
 
   h1 {
-    font-size: 3.4rem;
+    font-size: 2.65rem;
+    white-space: normal;
   }
 
   .metrics,
