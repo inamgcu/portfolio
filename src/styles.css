@@ -629,7 +629,7 @@ h1 {
   position: relative;
   flex: 0 0 auto;
   width: 214px;
-  height: 78px;
+  height: 112px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -642,7 +642,7 @@ h1 {
 .company-logo img {
   width: 100%;
   height: 100%;
-  padding: 9px 14px;
+  padding: 12px 16px;
   object-fit: contain;
 }
 
@@ -659,15 +659,15 @@ h1 {
 }
 
 .logo-karzan img {
-  padding: 7px 8px;
+  padding: 10px 12px;
 }
 
 .logo-code5 img {
-  padding: 5px 40px;
+  padding: 8px 46px;
 }
 
 .logo-confiz img {
-  padding: 10px 70px;
+  padding: 14px 78px;
 }
 
 .job h3 {
