@@ -46,7 +46,7 @@ main {
     url("data:image/svg+xml,%3Csvg width='1200' height='700' viewBox='0 0 1200 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='white' stroke-opacity='.11'%3E%3Cpath d='M18 598 C218 428 370 646 556 492 S892 310 1180 440'/%3E%3Cpath d='M38 158 C238 276 392 42 594 186 S912 330 1160 116'/%3E%3Cpath d='M185 60 V642 M402 48 V618 M728 76 V662 M1010 52 V625'/%3E%3Cpath d='M90 520 H1110 M90 362 H1110 M90 204 H1110' stroke-opacity='.06'/%3E%3C/g%3E%3C/svg%3E");
   background-size: cover;
   border-radius: 8px;
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 28px 80px rgba(21, 33, 47, 0.14);
@@ -88,9 +88,9 @@ main {
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
-  gap: 24px;
-  align-items: stretch;
-  padding: 40px 0 10px;
+  gap: 20px;
+  align-items: center;
+  padding: 28px 0 0;
 }
 
 .hero__copy {
@@ -154,10 +154,10 @@ h1 {
 
 .experience-canvas {
   position: relative;
-  min-height: 100%;
-  padding: 24px;
+  min-height: 300px;
+  padding: 22px;
   display: grid;
-  align-content: end;
+  align-content: center;
   overflow: hidden;
   border: 1px solid rgba(248, 213, 107, 0.28);
   border-radius: 8px;
@@ -189,25 +189,11 @@ h1 {
   border: 1px solid rgba(128, 198, 217, 0.24);
 }
 
-.canvas-kicker {
-  position: relative;
-  z-index: 1;
-  width: fit-content;
-  margin-bottom: 16px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  color: #80c6d9;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 0.76rem;
-  font-weight: 850;
-  text-transform: uppercase;
-}
-
 .experience-canvas strong {
   position: relative;
   z-index: 1;
   color: #f8d56b;
-  font-size: clamp(3.6rem, 7vw, 5.8rem);
+  font-size: clamp(3.25rem, 6vw, 5.2rem);
   line-height: 0.95;
   letter-spacing: 0;
 }
@@ -215,7 +201,7 @@ h1 {
 .experience-canvas p {
   position: relative;
   z-index: 1;
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   color: rgba(237, 245, 247, 0.78);
   font-weight: 760;
   line-height: 1.55;
@@ -227,7 +213,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .canvas-stack span {
@@ -293,7 +279,8 @@ h1 {
 }
 
 .hero-board {
-  margin-top: 34px;
+  width: min(920px, 100%);
+  margin: 22px auto 0;
   grid-column: 1 / -1;
   display: block;
 }
@@ -309,17 +296,17 @@ h1 {
 }
 
 .signal-card {
-  min-height: 142px;
-  padding: 18px;
+  min-height: 116px;
+  padding: 15px;
   display: grid;
   align-content: space-between;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07));
 }
 
 .signal-card svg {
-  width: 34px;
-  height: 34px;
-  padding: 7px;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
   border-radius: 8px;
   color: #f8d56b;
   background: rgba(248, 213, 107, 0.12);
@@ -334,7 +321,7 @@ h1 {
 .signal-card span {
   color: rgba(237, 245, 247, 0.68);
   line-height: 1.45;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 650;
 }
 
@@ -353,7 +340,7 @@ h1 {
   border: 1px solid rgba(21, 33, 47, 0.14);
   border-radius: 8px;
   overflow: hidden;
-  transform: translateY(-34px);
+  transform: translateY(-22px);
   box-shadow: 0 18px 48px rgba(21, 33, 47, 0.12);
 }
 
@@ -399,14 +386,14 @@ h1 {
 }
 
 .section {
-  padding: 72px 0;
+  padding: 64px 0;
 }
 
 .services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  padding-top: 32px;
+  padding-top: 24px;
 }
 
 .tools-section {
@@ -1199,12 +1186,12 @@ h1 {
   }
 
   .hero__grid {
-    gap: 24px;
-    padding-top: 42px;
+    gap: 18px;
+    padding-top: 28px;
   }
 
   .hero-board {
-    margin-top: 26px;
+    margin-top: 18px;
   }
 
   .signal-grid {
@@ -1225,8 +1212,8 @@ h1 {
   }
 
   .experience-canvas {
-    min-height: 240px;
-    padding: 20px;
+    min-height: 220px;
+    padding: 18px;
   }
 
   .experience-canvas strong {
@@ -1250,7 +1237,7 @@ h1 {
   }
 
   .section {
-    padding: 52px 0;
+    padding: 46px 0;
   }
 
   .timeline::before {

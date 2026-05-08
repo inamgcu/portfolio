@@ -326,7 +326,6 @@ function App() {
               </div>
             </div>
             <aside className="experience-canvas" aria-label="Experience highlight">
-              <span className="canvas-kicker">Commercial experience</span>
               <strong>10+ years</strong>
               <p>.NET, Azure, SQL, integrations, and enterprise delivery across web, mobile, and data platforms.</p>
               <div className="canvas-stack" aria-label="Experience areas">
