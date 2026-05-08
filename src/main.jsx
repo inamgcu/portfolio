@@ -80,7 +80,7 @@ const experience = [
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
     impact: "Shaping secure, scalable enterprise platforms with a .NET-first architecture lens.",
-    stack: [".NET Core", "ASP.NET Core", "Azure", "SQL Server", "CI/CD"],
+    stack: [".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
     points: [
       "Design ASP.NET Core application boundaries, REST APIs, integration flows, and SQL Server access patterns for production-grade enterprise systems.",
       "Guide system design, code review, CI/CD setup, and Azure deployment decisions across delivery teams.",
@@ -227,6 +227,8 @@ const stackIcons = {
   "ASP.NET Core": Code2,
   "Web API": Network,
   "Azure": Cloud,
+  "Azure Service Bus": Workflow,
+  "Azure DevOps": Workflow,
   "SQL Server": Database,
   "CI/CD": Workflow,
   "Clean Architecture": Layers3,
