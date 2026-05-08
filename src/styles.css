@@ -468,7 +468,6 @@ h1 {
 
 .competency,
 .skill-card,
-.job,
 .proof article {
   border: 1px solid rgba(21, 33, 47, 0.12);
   border-radius: 8px;
@@ -485,8 +484,7 @@ h1 {
 }
 
 .competency:hover,
-.skill-card:hover,
-.job:hover {
+.skill-card:hover {
   border-color: rgba(33, 113, 135, 0.34);
   transform: translateY(-3px);
   transition: transform 180ms ease, border-color 180ms ease;
@@ -513,36 +511,117 @@ h1 {
   top: 24px;
 }
 
+.experience-section {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.7fr) minmax(0, 1.3fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.experience-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.experience-stats {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(21, 33, 47, 0.14);
+  border-radius: 8px;
+  background: rgba(21, 33, 47, 0.14);
+  box-shadow: 0 16px 34px rgba(21, 33, 47, 0.06);
+}
+
+.experience-stats span {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 16px;
+  color: #405569;
+  background: rgba(255, 255, 255, 0.74);
+  font-weight: 750;
+}
+
+.experience-stats strong {
+  color: #c8553d;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
 .timeline {
   display: grid;
-  gap: 14px;
+  gap: 18px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  inset: 18px auto 18px 20px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(33, 113, 135, 0), rgba(33, 113, 135, 0.46), rgba(200, 85, 61, 0));
 }
 
 .job {
-  padding: 22px;
+  padding: 24px 24px 24px 70px;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(21, 33, 47, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(238, 247, 245, 0.78));
+  box-shadow: 0 18px 38px rgba(21, 33, 47, 0.08);
 }
 
 .job::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(180deg, #217187, #c8553d);
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #217187, #c8553d, rgba(248, 213, 107, 0.9));
+}
+
+.job::after {
+  content: "";
+  position: absolute;
+  inset: auto -58px -74px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(33, 113, 135, 0.08);
+}
+
+.job__marker {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 0 8px 8px 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, #15212f, #217187);
+  font-size: 0.78rem;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(33, 113, 135, 0.2);
 }
 
 .job__header {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
 }
 
 .job h3 {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: #15212f;
-  font-size: 1.32rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1;
 }
 
 .job p {
@@ -553,9 +632,24 @@ h1 {
 
 .job__header span {
   flex: 0 0 auto;
-  color: #6a7a86;
+  align-self: start;
+  border: 1px solid rgba(33, 113, 135, 0.16);
+  border-radius: 999px;
+  padding: 8px 11px;
+  color: #395165;
+  background: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   font-weight: 750;
+}
+
+.job__impact {
+  margin-bottom: 16px;
+  color: #31485a;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  font-weight: 750;
+  position: relative;
+  z-index: 1;
 }
 
 .job ul {
@@ -563,10 +657,37 @@ h1 {
   padding-left: 18px;
   color: #43586b;
   line-height: 1.62;
+  position: relative;
+  z-index: 1;
 }
 
 .job li + li {
   margin-top: 8px;
+}
+
+.job__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.job__stack span {
+  border: 1px solid rgba(21, 33, 47, 0.12);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #2f5364;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.job:hover {
+  border-color: rgba(33, 113, 135, 0.34);
+  transform: translateY(-3px);
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .skills-band {
@@ -695,6 +816,7 @@ h1 {
 @media (max-width: 980px) {
   .hero__grid,
   .split,
+  .experience-section,
   .contact,
   .proof {
     grid-template-columns: 1fr;
@@ -765,6 +887,18 @@ h1 {
 
   .section {
     padding: 52px 0;
+  }
+
+  .timeline::before {
+    left: 16px;
+  }
+
+  .job {
+    padding: 76px 18px 20px;
+  }
+
+  .job__marker {
+    top: 18px;
   }
 
   .job__header {

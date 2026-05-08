@@ -77,6 +77,8 @@ const experience = [
     company: "tkxel",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
+    impact: "Consulting on secure, scalable enterprise delivery across Azure and .NET ecosystems.",
+    stack: [".NET Core", "ASP.NET Core", "Azure", "SQL Server", "CI/CD"],
     points: [
       "Architect and deliver scalable, secure enterprise solutions using .NET Core and ASP.NET Core.",
       "Design RESTful APIs, orchestrate third-party integrations, and optimize SQL Server data access layers.",
@@ -87,6 +89,8 @@ const experience = [
     company: "Ebryx",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
+    impact: "Owned technical direction, client translation, and delivery standards for enterprise .NET 8 applications.",
+    stack: [".NET 8", "Clean Architecture", "DDD", "Client Leadership", "Team Standards"],
     points: [
       "Led end-to-end development of enterprise-grade web applications on .NET 8, establishing technical standards and architectural patterns for the engineering team.",
       "Served as the primary technical liaison with clients, translating business requirements into actionable engineering plans and consistently achieving 100% client satisfaction."
@@ -96,6 +100,8 @@ const experience = [
     company: "Confiz Limited",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
+    impact: "Grew from production engineering into architecture ownership across BI, cloud, web, and mobile programs.",
+    stack: ["Azure Data Factory", "Power BI", "SSIS", "Xamarin", "Web API"],
     points: [
       "Delivered a cloud-native BI platform with Azure Data Lake, Azure Data Factory, USQL, and Power BI, reducing reporting cycle time by over 60%.",
       "Overhauled a critical BI system using REST APIs, Web Jobs, SSIS, and Power BI, improving performance by 75%.",
@@ -107,12 +113,16 @@ const experience = [
     company: "Karzansoft",
     period: "August 2013 - March 2014",
     role: "Software Engineer",
+    impact: "Strengthened product features and support workflows for a car leasing platform.",
+    stack: [".NET", "Web Apps", "Windows Apps", "Production Support"],
     points: ["Enhanced web and Windows desktop applications for a car leasing platform with production support ownership."]
   },
   {
     company: "Code5 Technologies",
     period: "November 2012 - May 2013",
     role: "Software Engineer",
+    impact: "Built an interactive kiosk product blending desktop software, camera integration, and social publishing.",
+    stack: ["Windows Kiosk", "DSLR Integration", "Image Filters", "Facebook API"],
     points: ["Built a Windows Kiosk photo booth application with DSLR integration, real-time filters, and Facebook upload automation."]
   }
 ];
@@ -319,18 +329,26 @@ function App() {
         </div>
       </section>
 
-      <section className="section split" id="experience">
-        <div className="section__intro sticky">
-          <span className="section-kicker">Experience</span>
-          <h2>From production engineering to architecture ownership.</h2>
-          <p>
-            A track record across consulting, enterprise application delivery, BI modernization,
-            mobile platforms, and team leadership.
-          </p>
+      <section className="section experience-section" id="experience">
+        <div className="experience-panel">
+          <div className="section__intro sticky">
+            <span className="section-kicker">Experience</span>
+            <h2>From production engineering to architecture ownership.</h2>
+            <p>
+              A track record across consulting, enterprise application delivery, BI modernization,
+              mobile platforms, and team leadership.
+            </p>
+          </div>
+          <div className="experience-stats" aria-label="Experience highlights">
+            <span><strong>5</strong> companies</span>
+            <span><strong>12+</strong> years</span>
+            <span><strong>3</strong> senior leadership roles</span>
+          </div>
         </div>
         <div className="timeline">
-          {experience.map((job) => (
+          {experience.map((job, index) => (
             <article className="job" key={`${job.company}-${job.role}`}>
+              <div className="job__marker" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
               <div className="job__header">
                 <div>
                   <h3>{job.company}</h3>
@@ -338,11 +356,17 @@ function App() {
                 </div>
                 <span>{job.period}</span>
               </div>
+              <p className="job__impact">{job.impact}</p>
               <ul>
                 {job.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
+              <div className="job__stack">
+                {job.stack.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
             </article>
           ))}
         </div>
