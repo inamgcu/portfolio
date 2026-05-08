@@ -85,16 +85,47 @@ main {
   color: #ffffff;
 }
 
-.header-contact {
+.contact-canvas {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 12px;
+  align-items: center;
+  border: 1px solid rgba(128, 198, 217, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 44px),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(128, 198, 217, 0.08));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+.contact-canvas__heading {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 8px 11px;
+  color: #f8d56b;
+  background: rgba(248, 213, 107, 0.12);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-canvas__items {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-  margin-top: 14px;
 }
 
-.header-contact a,
-.header-contact span {
+.contact-canvas a,
+.contact-canvas__items span {
   min-height: 34px;
   display: inline-flex;
   align-items: center;
@@ -110,12 +141,12 @@ main {
   white-space: nowrap;
 }
 
-.header-contact svg {
+.contact-canvas svg {
   flex: 0 0 auto;
   color: #f8d56b;
 }
 
-.header-contact a:hover {
+.contact-canvas a:hover {
   border-color: rgba(248, 213, 107, 0.34);
   background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
@@ -1212,13 +1243,22 @@ h1 {
     justify-content: flex-end;
   }
 
-  .header-contact {
+  .contact-canvas {
+    grid-template-columns: 1fr;
     gap: 6px;
     margin-top: 12px;
+    padding: 9px;
   }
 
-  .header-contact a,
-  .header-contact span {
+  .contact-canvas__heading {
+    min-height: 30px;
+    width: fit-content;
+    padding: 7px 9px;
+    font-size: 0.72rem;
+  }
+
+  .contact-canvas a,
+  .contact-canvas__items span {
     min-height: 31px;
     padding: 7px 8px;
     font-size: 0.74rem;

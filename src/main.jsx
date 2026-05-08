@@ -302,16 +302,19 @@ function App() {
               <a href={`mailto:${profile.email}`}>Contact</a>
             </div>
           </nav>
-          <div className="header-contact" aria-label="Contact information">
-            <a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a>
-            <a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={15} aria-hidden="true" />{profile.phone}</a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer">
-              <Linkedin size={15} aria-hidden="true" />
-              LinkedIn
-              <ArrowUpRight size={13} aria-hidden="true" />
-            </a>
-            <span><MapPin size={15} aria-hidden="true" />{profile.location}</span>
-            <span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span>
+          <div className="contact-canvas" aria-label="Contact information">
+            <span className="contact-canvas__heading">Contact</span>
+            <div className="contact-canvas__items">
+              <a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a>
+              <a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={15} aria-hidden="true" />{profile.phone}</a>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                <Linkedin size={15} aria-hidden="true" />
+                LinkedIn
+                <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+              <span><MapPin size={15} aria-hidden="true" />{profile.location}</span>
+              <span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span>
+            </div>
           </div>
 
           <div className="hero__grid">
