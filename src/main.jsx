@@ -39,7 +39,7 @@ const profile = {
   email: "inamgcu@gmail.com",
   linkedin: "https://www.linkedin.com/in/hafiz-inam-ul-haq-605b611a/",
   summary:
-    "12+ years designing enterprise .NET, Azure, SQL, integration, and data platforms."
+    "10+ years designing enterprise .NET, Azure, SQL, integration, and data platforms."
 };
 
 const competencies = [
@@ -461,7 +461,7 @@ function App() {
           </div>
           <div className="experience-stats" aria-label="Experience highlights">
             <span><strong>5</strong> companies</span>
-            <span><strong>12+</strong> years</span>
+            <span><strong>10+</strong> Years</span>
             <span><strong>3</strong> senior leadership roles</span>
           </div>
         </div>
