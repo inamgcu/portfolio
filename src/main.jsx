@@ -299,9 +299,20 @@ function App() {
             <div className="navlinks">
               <a href="#experience">Experience</a>
               <a href="#skills">Skills</a>
-              <a href="#contact">Contact</a>
+              <a href={`mailto:${profile.email}`}>Contact</a>
             </div>
           </nav>
+          <div className="header-contact" aria-label="Contact information">
+            <a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a>
+            <a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={15} aria-hidden="true" />{profile.phone}</a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              <Linkedin size={15} aria-hidden="true" />
+              LinkedIn
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </a>
+            <span><MapPin size={15} aria-hidden="true" />{profile.location}</span>
+            <span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span>
+          </div>
 
           <div className="hero__grid">
             <div className="hero__copy">
@@ -542,23 +553,6 @@ function App() {
         </article>
       </section>
 
-      <section className="contact" id="contact">
-        <div>
-          <span className="section-kicker">Contact</span>
-          <h2>Build dependable enterprise software.</h2>
-          <p>
-            Available for solution architecture, .NET modernization, Azure platform design,
-            integration strategy, delivery governance, and engineering team enablement.
-          </p>
-        </div>
-        <div className="contact-links">
-          <a href={`mailto:${profile.email}`}><Mail size={18} />{profile.email}</a>
-          <a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={18} />{profile.phone}</a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={18} />LinkedIn<ArrowUpRight size={16} /></a>
-          <span><MapPin size={18} />{profile.location}</span>
-          <span><Github size={18} />GitHub: inamgcu</span>
-        </div>
-      </section>
     </main>
   );
 }
