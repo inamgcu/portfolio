@@ -367,37 +367,39 @@ h1 {
 
 .hero-board {
   width: 100%;
-  margin: 22px 0 0;
+  margin: 26px 0 0;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   display: block;
 }
 
 .signal-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
 }
 
 .signal-card {
-  min-height: 78px;
-  padding: 12px;
+  min-height: 62px;
+  padding: 0 13px;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-rows: auto auto;
-  column-gap: 10px;
+  column-gap: 9px;
   align-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07));
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.signal-card + .signal-card {
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .signal-card svg {
   grid-row: 1 / span 2;
-  width: 28px;
-  height: 28px;
-  padding: 6px;
+  width: 26px;
+  height: 26px;
+  padding: 5px;
   border-radius: 8px;
   color: #f8d56b;
   background: rgba(248, 213, 107, 0.12);
@@ -405,15 +407,15 @@ h1 {
 
 .signal-card strong {
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.2;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .signal-card span {
   color: rgba(237, 245, 247, 0.68);
-  line-height: 1.35;
-  font-size: 0.78rem;
+  line-height: 1.25;
+  font-size: 0.68rem;
   font-weight: 650;
 }
 
@@ -1301,7 +1303,13 @@ h1 {
   }
 
   .signal-card {
-    min-height: 92px;
+    min-height: 60px;
+    padding: 8px 0;
+  }
+
+  .signal-card + .signal-card {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   h1 {
