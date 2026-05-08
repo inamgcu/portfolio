@@ -620,15 +620,16 @@ h1 {
 .job__identity {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .company-logo {
   position: relative;
   flex: 0 0 auto;
-  width: 148px;
-  height: 72px;
+  width: 214px;
+  height: 78px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -641,7 +642,7 @@ h1 {
 .company-logo img {
   width: 100%;
   height: 100%;
-  padding: 10px 12px;
+  padding: 9px 14px;
   object-fit: contain;
 }
 
@@ -658,15 +659,15 @@ h1 {
 }
 
 .logo-karzan img {
-  padding: 8px 10px;
+  padding: 7px 8px;
 }
 
 .logo-code5 img {
-  padding: 6px 18px;
+  padding: 5px 40px;
 }
 
 .logo-confiz img {
-  padding: 11px;
+  padding: 10px 70px;
 }
 
 .job h3 {
@@ -959,6 +960,7 @@ h1 {
 
   .job__identity {
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .job__header span {
