@@ -318,6 +318,10 @@ function App() {
               <h1>{profile.name}</h1>
               <p className="role">{profile.role}</p>
               <p className="summary">{profile.summary}</p>
+              <div className="hero-experience" aria-label="Experience highlight">
+                <strong>10+ years</strong>
+                <span>commercial software development across .NET, Azure, SQL, integrations, and enterprise delivery</span>
+              </div>
               <div className="stack-strip" aria-label="Signature technology stack">
                 {signatureStack.map((item) => (
                   <span key={item}>{item}</span>
