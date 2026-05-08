@@ -39,7 +39,7 @@ const profile = {
   email: "inamgcu@gmail.com",
   linkedin: "https://www.linkedin.com/in/hafiz-inam-ul-haq-605b611a/",
   summary:
-    "Results-driven .NET Technology Consultant and Software Architect with 12+ years of experience designing and delivering high-performance, cloud-native solutions across enterprise, mobile, and web platforms."
+    "Results-driven .NET Technology Consultant and Software Architect with 12+ years of experience designing scalable ASP.NET Core, Web API, Azure, and SQL Server solutions for enterprise web, mobile, and integration platforms."
 };
 
 const competencies = [
@@ -49,7 +49,7 @@ const competencies = [
   { icon: Network, label: "RESTful API Design" },
   { icon: UsersRound, label: "Agile & Scrum Leadership" },
   { icon: ShieldCheck, label: "CI/CD & DevOps" },
-  { icon: Database, label: "Data Engineering & ETL" },
+  { icon: Database, label: "SQL Server Performance" },
   { icon: Sparkles, label: "Team Mentoring" }
 ];
 
@@ -63,12 +63,12 @@ const skillGroups = [
     items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "API Management", "Docker", "Azure DevOps"]
   },
   {
-    title: "Data",
-    items: ["SQL Server", "T-SQL", "Query Optimization", "SSIS", "Azure Data Factory", "USQL", "Power BI", "Data Warehousing"]
+    title: ".NET Platform",
+    items: ["Clean Architecture", "DDD", "Microservices", "CQRS", "REST", "SOLID", "Design Patterns", "MVVM"]
   },
   {
-    title: "Architecture",
-    items: ["Clean Architecture", "DDD", "Microservices", "Event-Driven Architecture", "SOLID", "Design Patterns", "REST", "CQRS"]
+    title: "Data Access",
+    items: ["SQL Server", "T-SQL", "Stored Procedures", "Query Optimization", "Database Design", "Entity Framework", "SSIS", "Power BI"]
   }
 ];
 
@@ -100,12 +100,12 @@ const experience = [
     company: "Confiz Limited",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
-    impact: "Grew from production engineering into architecture ownership across BI, cloud, web, and mobile programs.",
-    stack: ["Azure Data Factory", "Power BI", "SSIS", "Xamarin", "Web API"],
+    impact: "Grew from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, and data-heavy enterprise systems.",
+    stack: ["ASP.NET Core", "Web API", "SQL Server", "Azure", "Xamarin"],
     points: [
-      "Delivered a cloud-native BI platform with Azure Data Lake, Azure Data Factory, USQL, and Power BI, reducing reporting cycle time by over 60%.",
-      "Overhauled a critical BI system using REST APIs, Web Jobs, SSIS, and Power BI, improving performance by 75%.",
-      "Directed Agile delivery across web, mobile, back-end, and cloud projects while mentoring junior and mid-level engineers.",
+      "Architected and delivered .NET-based enterprise systems across REST APIs, back-end services, SQL Server, Azure services, and cross-platform mobile applications.",
+      "Overhauled critical back-end and reporting workflows using REST APIs, Web Jobs, SSIS, SQL optimization, and Power BI, improving performance by 75%.",
+      "Directed Agile delivery across web, mobile, back-end, API, and cloud projects while mentoring junior and mid-level engineers.",
       "Built mobile applications with Xamarin, UWP, and MVVMCross using shared codebases across platforms."
     ]
   },
@@ -128,9 +128,9 @@ const experience = [
 ];
 
 const outcomes = [
-  { value: "12+", label: "Years building enterprise systems", detail: ".NET, Azure, web, mobile, BI" },
-  { value: "75%", label: "Performance gain", detail: "Critical BI platform turnaround" },
-  { value: "60%+", label: "Reporting cycle reduction", detail: "Azure BI automation impact" },
+  { value: "12+", label: "Years building .NET systems", detail: "ASP.NET Core, Web API, Azure, SQL" },
+  { value: "75%", label: "Performance gain", detail: ".NET back-end and SQL workflow turnaround" },
+  { value: "60%+", label: "Cycle-time reduction", detail: "Enterprise automation and reporting impact" },
   { value: "100%", label: "Client satisfaction", detail: "Delivery leadership at Ebryx" }
 ];
 
@@ -139,7 +139,7 @@ const certifications = [
   "DP-203 - Azure Data Engineer Associate"
 ];
 
-const signatureStack = [".NET 8", "Azure", "Clean Architecture", "SQL Server", "Power BI", "CI/CD"];
+const signatureStack = [".NET 8", "ASP.NET Core", "Web API", "Azure", "SQL Server", "Clean Architecture"];
 
 const serviceLines = [
   {
@@ -148,9 +148,9 @@ const serviceLines = [
     body: "Azure-first architecture, API management, integration design, and platform delivery."
   },
   {
-    icon: Database,
-    title: "BI & Data Platforms",
-    body: "Data Factory, Data Lake, SSIS, Power BI, and reporting pipelines built for business velocity."
+    icon: Code2,
+    title: ".NET Platform Engineering",
+    body: "ASP.NET Core, Web API, Entity Framework Core, SQL Server, and clean application boundaries."
   },
   {
     icon: UsersRound,
@@ -335,8 +335,8 @@ function App() {
             <span className="section-kicker">Experience</span>
             <h2>From production engineering to architecture ownership.</h2>
             <p>
-              A track record across consulting, enterprise application delivery, BI modernization,
-              mobile platforms, and team leadership.
+              A track record across .NET consulting, enterprise application delivery, API modernization,
+              Azure-backed platforms, SQL performance, mobile systems, and team leadership.
             </p>
           </div>
           <div className="experience-stats" aria-label="Experience highlights">
@@ -375,7 +375,7 @@ function App() {
       <section className="section skills-band" id="skills">
         <div className="section__intro">
           <span className="section-kicker">Technical Skills</span>
-          <h2>Microsoft-stack specialist with strong cloud, data, and design practice.</h2>
+          <h2>.NET-first Microsoft-stack specialist with strong cloud, SQL, API, and design practice.</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map((group) => (
