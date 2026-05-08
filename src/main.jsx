@@ -33,42 +33,42 @@ import "./styles.css";
 
 const profile = {
   name: "Hafiz Muhammad Inam Ul Haq",
-  role: ".NET Technology Consultant | Associate Software Architect",
+  role: "Solution Architect | .NET Technology Consultant",
   location: "Lahore, Pakistan",
   phone: "+92-322-8002441",
   email: "inamgcu@gmail.com",
   linkedin: "https://www.linkedin.com/in/hafiz-inam-ul-haq-605b611a/",
   summary:
-    "Results-driven .NET Technology Consultant and Software Architect with 12+ years of experience designing scalable ASP.NET Core, Web API, Azure, and SQL Server solutions for enterprise web, mobile, and integration platforms."
+    "Solution Architect and .NET Technology Consultant with 12+ years designing enterprise .NET, Azure, SQL Server, integration, and data transformation platforms."
 };
 
 const competencies = [
-  { icon: Layers3, label: "Enterprise Architecture" },
-  { icon: Cloud, label: "Azure Cloud Solutions" },
+  { icon: Layers3, label: "Architecture Vision" },
+  { icon: Target, label: "Trade-off Analysis" },
+  { icon: UsersRound, label: "Stakeholder Alignment" },
+  { icon: Network, label: "Integration Architecture" },
   { icon: Code2, label: ".NET / ASP.NET Core" },
-  { icon: Network, label: "RESTful API Design" },
-  { icon: UsersRound, label: "Agile & Scrum Leadership" },
-  { icon: ShieldCheck, label: "CI/CD & DevOps" },
+  { icon: Cloud, label: "Azure Cloud Solutions" },
   { icon: Database, label: "SQL Server Performance" },
-  { icon: Sparkles, label: "Team Mentoring" }
+  { icon: ShieldCheck, label: "Delivery Governance" }
 ];
 
 const skillGroups = [
   {
-    title: "Engineering",
-    items: [".NET 8", ".NET Core", "ASP.NET Core", "Web API", "Entity Framework Core", "C#", "JavaScript", "jQuery"]
+    title: "Solution Architecture",
+    items: ["Architecture Vision", "Requirements Analysis", "Trade-off Analysis", "ADRs", "System Decomposition", "Design Reviews", "Technical Roadmaps", "Stakeholder Communication"]
   },
   {
-    title: "Cloud & DevOps",
-    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "API Management", "Docker", "Azure DevOps"]
+    title: ".NET Engineering",
+    items: [".NET 8", ".NET Core", "ASP.NET Core", "Web API", "Entity Framework Core", "C#", "REST", "Integration Architecture"]
   },
   {
-    title: ".NET Platform",
-    items: ["Clean Architecture", "DDD", "Microservices", "CQRS", "REST", "SOLID", "Design Patterns", "MVVM"]
+    title: "Azure & Delivery",
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "API Management", "Docker", "Orchestration Fundamentals", "Azure DevOps"]
   },
   {
-    title: "Data Access",
-    items: ["SQL Server", "T-SQL", "Stored Procedures", "Query Optimization", "Database Design", "Entity Framework", "SSIS", "Power BI"]
+    title: "Data & Storage",
+    items: ["SQL Server", "T-SQL", "Query Optimization", "Database Design", "Data Integration", "Data Transformation", "NoSQL Concepts", "Power BI"]
   }
 ];
 
@@ -79,12 +79,12 @@ const experience = [
     logoClass: "logo-tkxel",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
-    impact: "Shaping secure, scalable enterprise platforms with a .NET-first architecture lens.",
-    stack: [".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
+    impact: "Shaping architecture direction for secure, scalable enterprise platforms with a .NET and Azure lens.",
+    stack: ["Architecture Vision", ".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
     points: [
-      "Design ASP.NET Core application boundaries, REST APIs, integration flows, and SQL Server access patterns for production-grade enterprise systems.",
-      "Guide system design, code review, CI/CD setup, and Azure deployment decisions across delivery teams.",
-      "Keep performance, security, observability, and maintainability visible from architecture through release."
+      "Define solution direction for enterprise .NET and Azure systems, aligning business goals with integration needs, security constraints, and long-term maintainability.",
+      "Document architecture decisions, review downstream design choices, and guide API boundaries, SQL access patterns, CI/CD setup, and Azure deployment planning.",
+      "Keep performance, security, supportability, and delivery risk visible through trade-off discussions with engineering and client stakeholders."
     ]
   },
   {
@@ -93,12 +93,12 @@ const experience = [
     logoClass: "logo-ebryx",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
-    impact: "Owned technical direction and delivery quality for enterprise .NET 8 applications.",
-    stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Client Leadership"],
+    impact: "Owned architecture patterns, technical standards, and client-facing delivery decisions for enterprise .NET 8 applications.",
+    stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Stakeholder Alignment"],
     points: [
-      "Led end-to-end delivery of enterprise-grade .NET 8 web applications, setting architecture standards and reusable engineering patterns.",
-      "Translated business goals into pragmatic technical plans, sprint scope, API contracts, and implementation guidance.",
-      "Acted as the primary client-facing technical owner, sustaining 100% client satisfaction through clear communication and reliable delivery."
+      "Led solution design for enterprise-grade .NET 8 applications, establishing architecture patterns, technical standards, and delivery guardrails.",
+      "Partnered with client stakeholders to clarify business goals, decompose requirements, evaluate trade-offs, and translate product needs into technical roadmaps.",
+      "Acted as the primary client-facing technical owner, sustaining 100% client satisfaction through clear communication, design validation, and reliable delivery."
     ]
   },
   {
@@ -107,12 +107,12 @@ const experience = [
     logoClass: "logo-confiz",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
-    impact: "Progressed from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, and SQL-heavy systems.",
-    stack: ["ASP.NET Core", "Web API", "SQL Server", "Azure", "Xamarin"],
+    impact: "Progressed from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, SQL, and data integration systems.",
+    stack: ["ASP.NET Core", "Web API", "SQL Server", "Azure", "Data Transformation", "Xamarin"],
     points: [
-      "Architected .NET-based systems across REST APIs, back-end services, SQL Server, Azure services, and cross-platform mobile applications.",
-      "Modernized critical back-end and reporting workflows with REST APIs, Web Jobs, SSIS, SQL optimization, and Power BI, improving performance by 75%.",
-      "Led Agile delivery across web, API, mobile, and cloud programs while mentoring junior and mid-level engineers.",
+      "Architected cloud-native data and integration solutions using Azure Data Lake, Azure Data Factory, REST APIs, Web Jobs, SSIS, SQL Server, and Power BI.",
+      "Modernized legacy reporting and integration workflows through API decomposition, SQL optimization, and Azure-based transformation pipelines, improving performance by 75%.",
+      "Led Agile delivery across web, API, mobile, cloud, and data programs while mentoring junior and mid-level engineers.",
       "Built Xamarin, UWP, and MVVMCross mobile applications with shared codebases and production support ownership."
     ]
   },
@@ -139,10 +139,10 @@ const experience = [
 ];
 
 const outcomes = [
-  { value: "12+", label: "Years building .NET systems", detail: "ASP.NET Core, Web API, Azure, SQL" },
-  { value: "75%", label: "Performance gain", detail: ".NET back-end and SQL workflow turnaround" },
+  { value: "12+", label: "Years in software delivery", detail: ".NET, Azure, SQL, integration platforms" },
+  { value: "3+", label: "Architecture leadership roles", detail: "Consultant, principal, and architect tracks" },
+  { value: "75%", label: "Performance gain", detail: "Legacy workflow modernization" },
   { value: "60%+", label: "Cycle-time reduction", detail: "Enterprise automation and reporting impact" },
-  { value: "100%", label: "Client satisfaction", detail: "Delivery leadership at Ebryx" }
 ];
 
 const certifications = [
@@ -169,23 +169,23 @@ const recognitions = [
   }
 ];
 
-const signatureStack = [".NET 8", "ASP.NET Core", "Web API", "Azure", "SQL Server", "Clean Architecture"];
+const signatureStack = ["Solution Architecture", ".NET 8", "Azure", "Integration Architecture", "SQL Server", "Data Transformation"];
 
 const serviceLines = [
   {
-    icon: Cloud,
-    title: "Cloud Modernization",
-    body: "Azure-first architecture, API management, integration design, and platform delivery."
+    icon: Layers3,
+    title: "Solution Architecture",
+    body: "Architecture vision, trade-off analysis, technical roadmaps, ADRs, and stakeholder alignment."
   },
   {
     icon: Code2,
-    title: ".NET Platform Engineering",
-    body: "ASP.NET Core, Web API, Entity Framework Core, SQL Server, and clean application boundaries."
+    title: ".NET & Azure Modernization",
+    body: "ASP.NET Core, Web API, Azure Service Bus, Azure DevOps, SQL Server, and clean boundaries."
   },
   {
-    icon: UsersRound,
-    title: "Engineering Leadership",
-    body: "Architecture standards, code review discipline, Agile delivery, and mentoring systems."
+    icon: Database,
+    title: "Data & Integration Strategy",
+    body: "Data integration, transformation, SQL performance, API decomposition, and reporting modernization."
   }
 ];
 
@@ -193,7 +193,7 @@ const workingStyle = [
   {
     icon: Target,
     title: "Business-first architecture",
-    body: "I map the technical shape of a system back to delivery goals, adoption risk, reporting needs, and operational ownership."
+    body: "I map architecture decisions back to business goals, quality attributes, constraints, delivery risk, and operational ownership."
   },
   {
     icon: Lightbulb,
@@ -203,7 +203,7 @@ const workingStyle = [
   {
     icon: ShieldCheck,
     title: "Production-minded delivery",
-    body: "Security, performance, CI/CD, data access, and supportability are treated as part of the build, not cleanup after the build."
+    body: "Design validation, testing expectations, CI/CD, performance, security, and supportability are treated as part of the architecture."
   }
 ];
 
@@ -221,7 +221,7 @@ const toolGroups = [
   {
     title: "Cloud Tooling",
     icon: Cloud,
-    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "Data Lake", "Data Factory", "API Management"]
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "Data Lake", "Data Factory", "API Management", "Docker"]
   }
 ];
 
@@ -250,6 +250,9 @@ const stackIcons = {
   "Azure DevOps": Workflow,
   "SQL Server": Database,
   "CI/CD": Workflow,
+  "Architecture Vision": Layers3,
+  "Stakeholder Alignment": UsersRound,
+  "Data Transformation": Database,
   "Clean Architecture": Layers3,
   DDD: Layers3,
   "Client Leadership": UsersRound,
@@ -280,7 +283,7 @@ function App() {
 
           <div className="hero__grid">
             <div className="hero__copy">
-              <span className="eyebrow">.NET architecture - Azure - enterprise delivery</span>
+              <span className="eyebrow">Solution architecture - .NET - Azure transformation</span>
               <h1>{profile.name}</h1>
               <p className="role">{profile.role}</p>
               <p className="summary">{profile.summary}</p>
@@ -372,7 +375,7 @@ function App() {
       <section className="section" id="expertise">
         <div className="section__intro">
           <span className="section-kicker">Core Competencies</span>
-          <h2>Architecture leadership with hands-on delivery depth.</h2>
+          <h2>Architecture leadership with hands-on engineering depth.</h2>
         </div>
         <div className="competency-grid">
           {competencies.map(({ icon: Icon, label }) => (
@@ -388,10 +391,10 @@ function App() {
         <div className="experience-panel">
           <div className="section__intro sticky">
             <span className="section-kicker">Experience</span>
-            <h2>From production engineering to architecture ownership.</h2>
+            <h2>From hands-on engineering to solution architecture ownership.</h2>
             <p>
-              A track record across .NET consulting, enterprise application delivery, API modernization,
-              Azure-backed platforms, SQL performance, mobile systems, and team leadership.
+              A track record across stakeholder alignment, architecture decisions, .NET modernization,
+              Azure-backed platforms, API decomposition, SQL performance, and data transformation.
             </p>
           </div>
           <div className="experience-stats" aria-label="Experience highlights">
@@ -441,7 +444,7 @@ function App() {
       <section className="section skills-band" id="skills">
         <div className="section__intro">
           <span className="section-kicker">Technical Skills</span>
-          <h2>.NET-first Microsoft-stack specialist with strong cloud, SQL, API, and design practice.</h2>
+          <h2>Solution architecture grounded in .NET, Azure, SQL, APIs, and delivery governance.</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map((group) => (
@@ -500,8 +503,8 @@ function App() {
           <span className="section-kicker">Contact</span>
           <h2>Let's build dependable enterprise software.</h2>
           <p>
-            Available for architecture consulting, .NET modernization, Azure platform design,
-            delivery leadership, and engineering team enablement.
+            Available for solution architecture, .NET modernization, Azure platform design,
+            integration strategy, delivery governance, and engineering team enablement.
           </p>
         </div>
         <div className="contact-links">
