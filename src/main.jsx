@@ -324,6 +324,19 @@ function App() {
                   LinkedIn
                 </a>
               </div>
+            </div>
+            <div className="hero__side">
+              <aside className="experience-canvas" aria-label="Experience highlight">
+                <span className="experience-canvas__heading">Experience</span>
+                <strong>10+ Years</strong>
+                <p>.NET, Azure, SQL, integrations, and enterprise delivery across web, mobile, and data platforms.</p>
+                <div className="canvas-stack" aria-label="Experience areas">
+                  <span>.NET</span>
+                  <span>Azure</span>
+                  <span>SQL Server</span>
+                  <span>Integration</span>
+                </div>
+              </aside>
               <div className="contact-canvas" aria-label="Contact information">
                 <span className="contact-canvas__heading">Contact</span>
                 <ul className="contact-canvas__items">
@@ -341,17 +354,6 @@ function App() {
                 </ul>
               </div>
             </div>
-            <aside className="experience-canvas" aria-label="Experience highlight">
-              <span className="experience-canvas__heading">Experience</span>
-              <strong>10+ Years</strong>
-              <p>.NET, Azure, SQL, integrations, and enterprise delivery across web, mobile, and data platforms.</p>
-              <div className="canvas-stack" aria-label="Experience areas">
-                <span>.NET</span>
-                <span>Azure</span>
-                <span>SQL Server</span>
-                <span>Integration</span>
-              </div>
-            </aside>
             <div className="hero-board" aria-label="Delivery focus">
               <div className="signal-grid">
                 {heroSignals.map(({ icon: Icon, label, detail }) => (

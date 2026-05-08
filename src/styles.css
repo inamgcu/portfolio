@@ -86,9 +86,9 @@ main {
 }
 
 .contact-canvas {
-  width: min(360px, 100%);
+  width: min(320px, 100%);
   max-width: 100%;
-  margin-top: 14px;
+  margin-top: 0;
   padding: 10px;
   display: grid;
   gap: 10px;
@@ -161,13 +161,23 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.34fr);
   gap: 20px;
-  align-items: center;
+  align-items: start;
   padding: 28px 0 0;
 }
 
 .hero__copy {
   width: 100%;
   max-width: none;
+}
+
+.hero__side {
+  display: grid;
+  gap: 14px;
+  align-self: start;
+}
+
+.hero__side .contact-canvas {
+  width: 100%;
 }
 
 .eyebrow,
@@ -234,10 +244,10 @@ h1 {
 
 .experience-canvas {
   position: relative;
-  min-height: 300px;
-  padding: 22px;
+  min-height: 238px;
+  padding: 18px;
   display: grid;
-  align-content: center;
+  align-content: start;
   overflow: hidden;
   border: 1px solid rgba(248, 213, 107, 0.28);
   border-radius: 8px;
@@ -1216,7 +1226,7 @@ h1 {
   }
 
   .experience-canvas {
-    min-height: 280px;
+    min-height: 238px;
   }
 
   .section__intro h2,
