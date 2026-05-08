@@ -215,23 +215,36 @@ h1 {
   box-shadow: 0 26px 70px rgba(21, 33, 47, 0.22);
 }
 
-.signal-panel__top {
+.hero-tools {
   display: grid;
-  gap: 8px;
+  gap: 14px;
   margin-bottom: 18px;
 }
 
-.signal-panel__top span {
+.hero-tools span {
   color: #80c6d9;
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.signal-panel__top strong {
-  max-width: 18ch;
-  font-size: 2rem;
-  line-height: 1;
+.hero-tools__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hero-tools__grid strong {
+  min-height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.88rem;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .architecture-visual {
@@ -414,6 +427,31 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   padding-top: 32px;
+}
+
+.tools-section {
+  padding-top: 34px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.tool-card {
+  min-height: 220px;
+  padding: 22px;
+  border: 1px solid rgba(21, 33, 47, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(239, 247, 245, 0.82));
+  box-shadow: 0 16px 34px rgba(21, 33, 47, 0.06);
+}
+
+.tool-card h3 {
+  margin-bottom: 16px;
+  color: #15212f;
 }
 
 .service {
@@ -761,7 +799,8 @@ h1 {
   .metrics,
   .competency-grid,
   .skills-grid,
-  .services {
+  .services,
+  .tools-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -802,7 +841,8 @@ h1 {
   .metrics,
   .competency-grid,
   .skills-grid,
-  .services {
+  .services,
+  .tools-grid {
     grid-template-columns: 1fr;
   }
 

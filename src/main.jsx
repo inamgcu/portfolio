@@ -123,6 +123,8 @@ const certifications = [
 
 const signatureStack = [".NET 8", "Azure", "Clean Architecture", "SQL Server", "Power BI", "CI/CD"];
 
+const heroTools = ["Visual Studio", "VS Code", "Postman", "GitHub", "Azure DevOps", "JIRA"];
+
 const serviceLines = [
   {
     icon: Cloud,
@@ -138,6 +140,21 @@ const serviceLines = [
     icon: UsersRound,
     title: "Engineering Leadership",
     body: "Architecture standards, code review discipline, Agile delivery, and mentoring systems."
+  }
+];
+
+const toolGroups = [
+  {
+    title: "Tools & Platforms",
+    items: ["JIRA", "Confluence", "Git", "GitHub", "Azure DevOps", "SharePoint", "Visual Studio", "Visual Studio Code", "Postman"]
+  },
+  {
+    title: "Project Delivery",
+    items: ["Agile", "Scrum", "Kanban", "Sprint Planning", "Backlog Grooming", "Risk Management", "Cross-functional Leadership"]
+  },
+  {
+    title: "Cloud Tooling",
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "Data Lake", "Data Factory", "API Management"]
   }
 ];
 
@@ -179,9 +196,13 @@ function App() {
             </div>
 
             <aside className="signal-panel" aria-label="Professional highlights">
-              <div className="signal-panel__top">
-                <span>Senior delivery signal</span>
-                <strong>Architecting outcomes, not just applications</strong>
+              <div className="hero-tools">
+                <span>Tools & Platforms</span>
+                <div className="hero-tools__grid">
+                  {heroTools.map((tool) => (
+                    <strong key={tool}>{tool}</strong>
+                  ))}
+                </div>
               </div>
               <div className="architecture-visual" aria-hidden="true">
                 <div className="flow-line flow-line--one" />
@@ -221,6 +242,25 @@ function App() {
             <p>{body}</p>
           </article>
         ))}
+      </section>
+
+      <section className="section tools-section" id="tools">
+        <div className="section__intro">
+          <span className="section-kicker">Tools</span>
+          <h2>Delivery tooling across code, cloud, data, and team workflows.</h2>
+        </div>
+        <div className="tools-grid">
+          {toolGroups.map((group) => (
+            <article className="tool-card" key={group.title}>
+              <h3>{group.title}</h3>
+              <div className="tags">
+                {group.items.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section" id="expertise">
