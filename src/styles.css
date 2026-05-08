@@ -33,7 +33,7 @@ main {
 }
 
 .hero {
-  min-height: 94vh;
+  min-height: auto;
   padding: 24px;
   display: flex;
   align-items: stretch;
@@ -87,16 +87,16 @@ main {
 }
 
 .hero__grid {
-  flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 26px;
-  align-items: end;
-  padding: 56px 0 18px;
+  gap: 18px;
+  align-items: start;
+  padding: 34px 0 10px;
 }
 
 .hero__copy {
-  max-width: 1120px;
+  width: 100%;
+  max-width: none;
 }
 
 .eyebrow,
@@ -130,10 +130,10 @@ h1 {
   background: linear-gradient(125deg, #102030 0%, #217187 48%, #c8553d 92%);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: clamp(3rem, 8vw, 7.2rem);
-  line-height: 0.92;
+  font-size: clamp(3.4rem, 8.6vw, 8.4rem);
+  line-height: 0.9;
   letter-spacing: 0;
-  max-width: 14ch;
+  max-width: 18ch;
 }
 
 .role {
@@ -147,7 +147,7 @@ h1 {
   color: #42576a;
   font-size: 1.08rem;
   line-height: 1.72;
-  max-width: 68ch;
+  max-width: 92ch;
 }
 
 .stack-strip {
