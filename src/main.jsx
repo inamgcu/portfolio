@@ -146,8 +146,14 @@ const outcomes = [
 ];
 
 const certifications = [
-  "PL-100 - Microsoft Power Platform App Maker",
-  "DP-203 - Azure Data Engineer Associate"
+  {
+    code: "PL-100",
+    title: "Microsoft Power Platform App Maker"
+  },
+  {
+    code: "DP-203",
+    title: "Azure Data Engineer Associate"
+  }
 ];
 
 const recognitions = [
@@ -471,7 +477,13 @@ function App() {
           </div>
           <div className="certs">
             {certifications.map((cert) => (
-              <span key={cert}><BadgeCheck size={17} aria-hidden="true" />{cert}</span>
+              <div className="cert-card" key={cert.code}>
+                <BadgeCheck size={20} aria-hidden="true" />
+                <div>
+                  <strong>{cert.code}</strong>
+                  <span>{cert.title}</span>
+                </div>
+              </div>
             ))}
           </div>
         </article>
