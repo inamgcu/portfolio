@@ -139,7 +139,6 @@ const experience = [
 ];
 
 const outcomes = [
-  { value: "12+", label: "Years in software delivery", detail: ".NET, Azure, SQL, integration platforms" },
   { value: "3+", label: "Architecture leadership roles", detail: "Consultant, principal, and architect tracks" },
   { value: "75%", label: "Performance gain", detail: "Legacy workflow modernization" },
   { value: "60%+", label: "Cycle-time reduction", detail: "Enterprise automation and reporting impact" },
@@ -310,10 +309,6 @@ function App() {
               <h1>{profile.name}</h1>
               <p className="role">{profile.role}</p>
               <p className="summary">{profile.summary}</p>
-              <div className="hero-experience" aria-label="Experience highlight">
-                <strong>10+ years</strong>
-                <span>commercial software development across .NET, Azure, SQL, integrations, and enterprise delivery</span>
-              </div>
               <div className="stack-strip" aria-label="Signature technology stack">
                 {signatureStack.map((item) => (
                   <span key={item}>{item}</span>
@@ -329,16 +324,27 @@ function App() {
                   LinkedIn
                 </a>
               </div>
-              <div className="hero-board" aria-label="Delivery focus">
-                <div className="signal-grid">
-                  {heroSignals.map(({ icon: Icon, label, detail }) => (
-                    <article className="signal-card" key={label}>
-                      <Icon size={19} aria-hidden="true" />
-                      <strong>{label}</strong>
-                      <span>{detail}</span>
-                    </article>
-                  ))}
-                </div>
+            </div>
+            <aside className="experience-canvas" aria-label="Experience highlight">
+              <span className="canvas-kicker">Commercial experience</span>
+              <strong>10+ years</strong>
+              <p>.NET, Azure, SQL, integrations, and enterprise delivery across web, mobile, and data platforms.</p>
+              <div className="canvas-stack" aria-label="Experience areas">
+                <span>.NET</span>
+                <span>Azure</span>
+                <span>SQL Server</span>
+                <span>Integration</span>
+              </div>
+            </aside>
+            <div className="hero-board" aria-label="Delivery focus">
+              <div className="signal-grid">
+                {heroSignals.map(({ icon: Icon, label, detail }) => (
+                  <article className="signal-card" key={label}>
+                    <Icon size={19} aria-hidden="true" />
+                    <strong>{label}</strong>
+                    <span>{detail}</span>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
