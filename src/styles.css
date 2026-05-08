@@ -833,6 +833,61 @@ h1 {
   margin-bottom: 12px;
 }
 
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.recognition-card {
+  position: relative;
+  min-height: 154px;
+  padding: 18px;
+  border: 1px solid rgba(200, 85, 61, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(248, 213, 107, 0.22), transparent 7rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 247, 238, 0.86));
+  box-shadow: 0 14px 30px rgba(200, 85, 61, 0.08);
+}
+
+.recognition-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #c8553d, #f8d56b);
+}
+
+.recognition-card > svg {
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  color: #c8553d;
+  background: rgba(200, 85, 61, 0.1);
+}
+
+.recognition-card strong,
+.recognition-card span {
+  display: block;
+}
+
+.recognition-card strong {
+  margin-bottom: 7px;
+  color: #15212f;
+  font-size: 1.02rem;
+}
+
+.recognition-card span {
+  color: #4b6172;
+  line-height: 1.5;
+  font-weight: 650;
+}
+
 .certs {
   display: flex;
   flex-wrap: wrap;
@@ -914,7 +969,8 @@ h1 {
   .skills-grid,
   .services,
   .tools-grid,
-  .style-grid {
+  .style-grid,
+  .recognition-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -963,7 +1019,8 @@ h1 {
   .skills-grid,
   .services,
   .tools-grid,
-  .style-grid {
+  .style-grid,
+  .recognition-grid {
     grid-template-columns: 1fr;
   }
 

@@ -150,6 +150,19 @@ const certifications = [
   "DP-203 - Azure Data Engineer Associate"
 ];
 
+const recognitions = [
+  {
+    icon: Award,
+    title: "Value Champion",
+    body: "Recognized for ownership, delivery impact, and consistently raising the bar for engineering quality."
+  },
+  {
+    icon: Sparkles,
+    title: "Employee of the Quarter",
+    body: "Awarded for strong execution, dependable collaboration, and visible contribution to team outcomes."
+  }
+];
+
 const signatureStack = [".NET 8", "ASP.NET Core", "Web API", "Azure", "SQL Server", "Clean Architecture"];
 
 const serviceLines = [
@@ -443,9 +456,19 @@ function App() {
           <Award size={24} aria-hidden="true" />
           <h2>Recognition & Certifications</h2>
           <p>
-            Value Champion Award recipient, company-wide technology seminar speaker, and Microsoft-certified
-            Power Platform App Maker and Azure Data Engineer Associate.
+            Highlighted for delivery excellence, engineering ownership, and Microsoft-stack certification depth.
           </p>
+          <div className="recognition-grid">
+            {recognitions.map(({ icon: Icon, title, body }) => (
+              <div className="recognition-card" key={title}>
+                <Icon size={20} aria-hidden="true" />
+                <div>
+                  <strong>{title}</strong>
+                  <span>{body}</span>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="certs">
             {certifications.map((cert) => (
               <span key={cert}><BadgeCheck size={17} aria-hidden="true" />{cert}</span>
