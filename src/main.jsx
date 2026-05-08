@@ -79,12 +79,12 @@ const experience = [
     logoClass: "logo-tkxel",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
-    impact: "Consulting on secure, scalable enterprise delivery across Azure and .NET ecosystems.",
+    impact: "Shaping secure, scalable enterprise platforms with a .NET-first architecture lens.",
     stack: [".NET Core", "ASP.NET Core", "Azure", "SQL Server", "CI/CD"],
     points: [
-      "Architect and deliver scalable, secure enterprise solutions using .NET Core and ASP.NET Core.",
-      "Design RESTful APIs, orchestrate third-party integrations, and optimize SQL Server data access layers.",
-      "Lead collaboration across system design, code reviews, CI/CD configuration, and Azure deployments."
+      "Design ASP.NET Core application boundaries, REST APIs, integration flows, and SQL Server access patterns for production-grade enterprise systems.",
+      "Guide system design, code review, CI/CD setup, and Azure deployment decisions across delivery teams.",
+      "Keep performance, security, observability, and maintainability visible from architecture through release."
     ]
   },
   {
@@ -93,11 +93,12 @@ const experience = [
     logoClass: "logo-ebryx",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
-    impact: "Owned technical direction, client translation, and delivery standards for enterprise .NET 8 applications.",
-    stack: [".NET 8", "Clean Architecture", "DDD", "Client Leadership", "Team Standards"],
+    impact: "Owned technical direction and delivery quality for enterprise .NET 8 applications.",
+    stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Client Leadership"],
     points: [
-      "Led end-to-end development of enterprise-grade web applications on .NET 8, establishing technical standards and architectural patterns for the engineering team.",
-      "Served as the primary technical liaison with clients, translating business requirements into actionable engineering plans and consistently achieving 100% client satisfaction."
+      "Led end-to-end delivery of enterprise-grade .NET 8 web applications, setting architecture standards and reusable engineering patterns.",
+      "Translated business goals into pragmatic technical plans, sprint scope, API contracts, and implementation guidance.",
+      "Acted as the primary client-facing technical owner, sustaining 100% client satisfaction through clear communication and reliable delivery."
     ]
   },
   {
@@ -106,13 +107,13 @@ const experience = [
     logoClass: "logo-confiz",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
-    impact: "Grew from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, and data-heavy enterprise systems.",
+    impact: "Progressed from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, and SQL-heavy systems.",
     stack: ["ASP.NET Core", "Web API", "SQL Server", "Azure", "Xamarin"],
     points: [
-      "Architected and delivered .NET-based enterprise systems across REST APIs, back-end services, SQL Server, Azure services, and cross-platform mobile applications.",
-      "Overhauled critical back-end and reporting workflows using REST APIs, Web Jobs, SSIS, SQL optimization, and Power BI, improving performance by 75%.",
-      "Directed Agile delivery across web, mobile, back-end, API, and cloud projects while mentoring junior and mid-level engineers.",
-      "Built mobile applications with Xamarin, UWP, and MVVMCross using shared codebases across platforms."
+      "Architected .NET-based systems across REST APIs, back-end services, SQL Server, Azure services, and cross-platform mobile applications.",
+      "Modernized critical back-end and reporting workflows with REST APIs, Web Jobs, SSIS, SQL optimization, and Power BI, improving performance by 75%.",
+      "Led Agile delivery across web, API, mobile, and cloud programs while mentoring junior and mid-level engineers.",
+      "Built Xamarin, UWP, and MVVMCross mobile applications with shared codebases and production support ownership."
     ]
   },
   {
@@ -121,9 +122,9 @@ const experience = [
     logoClass: "logo-karzan",
     period: "August 2013 - March 2014",
     role: "Software Engineer",
-    impact: "Strengthened product features and support workflows for a car leasing platform.",
+    impact: "Delivered product improvements and support fixes for business-critical leasing workflows.",
     stack: [".NET", "Web Apps", "Windows Apps", "Production Support"],
-    points: ["Enhanced web and Windows desktop applications for a car leasing platform with production support ownership."]
+    points: ["Enhanced .NET web and Windows desktop modules for a car leasing platform, improving reliability across operational workflows."]
   },
   {
     company: "Code5 Technologies",
@@ -131,9 +132,9 @@ const experience = [
     logoClass: "logo-code5",
     period: "November 2012 - May 2013",
     role: "Software Engineer",
-    impact: "Built an interactive kiosk product blending desktop software, camera integration, and social publishing.",
+    impact: "Built an interactive Windows kiosk product with hardware integration and social publishing.",
     stack: ["Windows Kiosk", "DSLR Integration", "Image Filters", "Facebook API"],
-    points: ["Built a Windows Kiosk photo booth application with DSLR integration, real-time filters, and Facebook upload automation."]
+    points: ["Developed a Windows photo booth application with DSLR capture, real-time image filters, and automated Facebook upload workflows."]
   }
 ];
 
@@ -218,6 +219,29 @@ const toolHighlights = [
   { icon: Bot, label: "Codex" },
   { icon: Cloud, label: "SharePoint" }
 ];
+
+const stackIcons = {
+  ".NET": Code2,
+  ".NET 8": Code2,
+  ".NET Core": Code2,
+  "ASP.NET Core": Code2,
+  "Web API": Network,
+  "Azure": Cloud,
+  "SQL Server": Database,
+  "CI/CD": Workflow,
+  "Clean Architecture": Layers3,
+  DDD: Layers3,
+  "Client Leadership": UsersRound,
+  "Team Standards": ShieldCheck,
+  Xamarin: Phone,
+  "Web Apps": Network,
+  "Windows Apps": MonitorCog,
+  "Production Support": ShieldCheck,
+  "Windows Kiosk": MonitorCog,
+  "DSLR Integration": Sparkles,
+  "Image Filters": Sparkles,
+  "Facebook API": Network
+};
 
 function App() {
   return (
@@ -378,9 +402,15 @@ function App() {
                 ))}
               </ul>
               <div className="job__stack">
-                {job.stack.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
+                {job.stack.map((item) => {
+                  const Icon = stackIcons[item] ?? Code2;
+                  return (
+                    <span key={item}>
+                      <Icon size={15} aria-hidden="true" />
+                      {item}
+                    </span>
+                  );
+                })}
               </div>
             </article>
           ))}

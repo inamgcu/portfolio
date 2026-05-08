@@ -633,10 +633,10 @@ h1 {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid rgba(21, 33, 47, 0.12);
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 12px 24px rgba(21, 33, 47, 0.08);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .company-logo img {
@@ -649,15 +649,17 @@ h1 {
 }
 
 .logo-tkxel {
+  border-radius: 8px;
   background: linear-gradient(135deg, #0755e9, #10347e);
 }
 
 .logo-ebryx {
+  border-radius: 8px;
   background: #111827;
 }
 
 .logo-confiz {
-  background: #f9fff6;
+  background: transparent;
 }
 
 .logo-karzan img {
@@ -701,22 +703,40 @@ h1 {
 }
 
 .job__impact {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   color: #31485a;
-  font-size: 1.02rem;
-  line-height: 1.55;
-  font-weight: 750;
+  font-size: 1.08rem;
+  line-height: 1.5;
+  font-weight: 800;
   position: relative;
   z-index: 1;
 }
 
 .job ul {
   margin: 0;
-  padding-left: 18px;
   color: #43586b;
   line-height: 1.62;
+  list-style: none;
+  padding-left: 0;
   position: relative;
   z-index: 1;
+}
+
+.job li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.job li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #217187;
+  box-shadow: 0 0 0 4px rgba(33, 113, 135, 0.12);
 }
 
 .job li + li {
@@ -735,11 +755,19 @@ h1 {
 .job__stack span {
   border: 1px solid rgba(21, 33, 47, 0.12);
   border-radius: 999px;
-  padding: 7px 10px;
+  padding: 7px 10px 7px 8px;
   color: #2f5364;
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.78);
   font-size: 0.82rem;
   font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.job__stack svg {
+  color: #c8553d;
+  flex: 0 0 auto;
 }
 
 .job:hover {
