@@ -86,14 +86,13 @@ main {
 }
 
 .contact-canvas {
-  width: fit-content;
+  width: min(360px, 100%);
   max-width: 100%;
   margin-top: 14px;
   padding: 10px;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 10px 12px;
-  align-items: center;
+  gap: 10px;
+  align-items: start;
   border: 1px solid rgba(128, 198, 217, 0.24);
   border-radius: 8px;
   background:
@@ -103,11 +102,11 @@ main {
 }
 
 .contact-canvas__heading {
-  min-height: 34px;
+  min-height: 30px;
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  padding: 8px 11px;
+  padding: 7px 10px;
   color: #f8d56b;
   background: rgba(248, 213, 107, 0.12);
   font-size: 0.78rem;
@@ -118,24 +117,30 @@ main {
 }
 
 .contact-canvas__items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.contact-canvas a,
+.contact-canvas__items li {
+  margin: 0;
+}
+
+.contact-canvas__items a,
 .contact-canvas__items span {
-  min-height: 34px;
+  width: 100%;
+  min-height: 32px;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 8px 10px;
+  padding: 7px 9px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(237, 245, 247, 0.84);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 760;
   line-height: 1;
   white-space: nowrap;
@@ -146,7 +151,7 @@ main {
   color: #f8d56b;
 }
 
-.contact-canvas a:hover {
+.contact-canvas__items a:hover {
   border-color: rgba(248, 213, 107, 0.34);
   background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
@@ -1244,7 +1249,6 @@ h1 {
   }
 
   .contact-canvas {
-    grid-template-columns: 1fr;
     gap: 6px;
     margin-top: 12px;
     padding: 9px;
@@ -1257,7 +1261,11 @@ h1 {
     font-size: 0.72rem;
   }
 
-  .contact-canvas a,
+  .contact-canvas__items {
+    gap: 6px;
+  }
+
+  .contact-canvas__items a,
   .contact-canvas__items span {
     min-height: 31px;
     padding: 7px 8px;

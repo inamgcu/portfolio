@@ -302,20 +302,6 @@ function App() {
               <a href={`mailto:${profile.email}`}>Contact</a>
             </div>
           </nav>
-          <div className="contact-canvas" aria-label="Contact information">
-            <span className="contact-canvas__heading">Contact</span>
-            <div className="contact-canvas__items">
-              <a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a>
-              <a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={15} aria-hidden="true" />{profile.phone}</a>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                <Linkedin size={15} aria-hidden="true" />
-                LinkedIn
-                <ArrowUpRight size={13} aria-hidden="true" />
-              </a>
-              <span><MapPin size={15} aria-hidden="true" />{profile.location}</span>
-              <span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span>
-            </div>
-          </div>
 
           <div className="hero__grid">
             <div className="hero__copy">
@@ -337,6 +323,22 @@ function App() {
                   <Linkedin size={18} aria-hidden="true" />
                   LinkedIn
                 </a>
+              </div>
+              <div className="contact-canvas" aria-label="Contact information">
+                <span className="contact-canvas__heading">Contact</span>
+                <ul className="contact-canvas__items">
+                  <li><a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a></li>
+                  <li><a href={`tel:${profile.phone.replaceAll("-", "")}`}><Phone size={15} aria-hidden="true" />{profile.phone}</a></li>
+                  <li>
+                    <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                      <Linkedin size={15} aria-hidden="true" />
+                      LinkedIn
+                      <ArrowUpRight size={13} aria-hidden="true" />
+                    </a>
+                  </li>
+                  <li><span><MapPin size={15} aria-hidden="true" />{profile.location}</span></li>
+                  <li><span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span></li>
+                </ul>
               </div>
             </div>
             <aside className="experience-canvas" aria-label="Experience highlight">
