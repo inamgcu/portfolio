@@ -130,11 +130,11 @@ h1 {
   background: linear-gradient(125deg, #ffffff 0%, #80c6d9 46%, #f8d56b 92%);
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: clamp(2.7rem, 5.9vw, 6.2rem);
+  font-size: clamp(2.6rem, 5.2vw, 5.35rem);
   line-height: 0.96;
   letter-spacing: 0;
   max-width: none;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .role {
@@ -166,27 +166,6 @@ h1 {
     linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 56px),
     linear-gradient(145deg, rgba(248, 213, 107, 0.17), rgba(128, 198, 217, 0.11));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 22px 46px rgba(0, 0, 0, 0.16);
-}
-
-.experience-canvas::before {
-  content: "";
-  position: absolute;
-  inset: 18px 18px auto auto;
-  width: 82px;
-  height: 82px;
-  border: 1px solid rgba(248, 213, 107, 0.28);
-  border-radius: 50%;
-  background: rgba(248, 213, 107, 0.08);
-}
-
-.experience-canvas::after {
-  content: "";
-  position: absolute;
-  inset: auto -28px -28px auto;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 1px solid rgba(128, 198, 217, 0.24);
 }
 
 .experience-canvas strong {
