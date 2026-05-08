@@ -324,6 +324,17 @@ function App() {
                   LinkedIn
                 </a>
               </div>
+              <div className="hero-board" aria-label="Delivery focus">
+                <div className="signal-grid">
+                  {heroSignals.map(({ icon: Icon, label, detail }) => (
+                    <article className="signal-card" key={label}>
+                      <Icon size={19} aria-hidden="true" />
+                      <strong>{label}</strong>
+                      <span>{detail}</span>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="hero__side">
               <aside className="experience-canvas" aria-label="Experience highlight">
@@ -352,17 +363,6 @@ function App() {
                   <li><span><MapPin size={15} aria-hidden="true" />{profile.location}</span></li>
                   <li><span><Github size={15} aria-hidden="true" />GitHub: inamgcu</span></li>
                 </ul>
-              </div>
-            </div>
-            <div className="hero-board" aria-label="Delivery focus">
-              <div className="signal-grid">
-                {heroSignals.map(({ icon: Icon, label, detail }) => (
-                  <article className="signal-card" key={label}>
-                    <Icon size={19} aria-hidden="true" />
-                    <strong>{label}</strong>
-                    <span>{detail}</span>
-                  </article>
-                ))}
               </div>
             </div>
           </div>
