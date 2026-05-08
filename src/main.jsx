@@ -12,6 +12,7 @@ import {
   FileJson,
   GitBranch,
   Github,
+  Lightbulb,
   KanbanSquare,
   Layers3,
   Linkedin,
@@ -23,6 +24,7 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Target,
   TrendingUp,
   Workflow,
   UsersRound
@@ -86,9 +88,8 @@ const experience = [
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
     points: [
-      "Led enterprise-grade .NET 8 web application delivery and established team-level technical standards.",
-      "Translated client goals into actionable engineering plans with consistently strong satisfaction outcomes.",
-      "Introduced Clean Architecture and DDD practices to improve maintainability and onboarding velocity."
+      "Led end-to-end development of enterprise-grade web applications on .NET 8, establishing technical standards and architectural patterns for the engineering team.",
+      "Served as the primary technical liaison with clients, translating business requirements into actionable engineering plans and consistently achieving 100% client satisfaction."
     ]
   },
   {
@@ -145,6 +146,24 @@ const serviceLines = [
     icon: UsersRound,
     title: "Engineering Leadership",
     body: "Architecture standards, code review discipline, Agile delivery, and mentoring systems."
+  }
+];
+
+const workingStyle = [
+  {
+    icon: Target,
+    title: "Business-first architecture",
+    body: "I map the technical shape of a system back to delivery goals, adoption risk, reporting needs, and operational ownership."
+  },
+  {
+    icon: Lightbulb,
+    title: "Clarity before complexity",
+    body: "I prefer clean boundaries, observable flows, and practical design patterns that make teams faster instead of just making diagrams prettier."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Production-minded delivery",
+    body: "Security, performance, CI/CD, data access, and supportability are treated as part of the build, not cleanup after the build."
   }
 ];
 
@@ -239,6 +258,22 @@ function App() {
             <p>{body}</p>
           </article>
         ))}
+      </section>
+
+      <section className="section style-section">
+        <div className="section__intro">
+          <span className="section-kicker">Working Style</span>
+          <h2>Senior engineering judgment with a consulting mindset.</h2>
+        </div>
+        <div className="style-grid">
+          {workingStyle.map(({ icon: Icon, title, body }) => (
+            <article className="style-card" key={title}>
+              <Icon size={23} aria-hidden="true" />
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section tools-section" id="tools">
