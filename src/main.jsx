@@ -75,7 +75,7 @@ const skillGroups = [
 const experience = [
   {
     company: "tkxel",
-    logo: "/logos/tkxel.svg",
+    logo: "./logos/tkxel.svg",
     logoClass: "logo-tkxel",
     period: "December 2025 - Present",
     role: "Technology Consultant - .NET",
@@ -89,7 +89,7 @@ const experience = [
   },
   {
     company: "Ebryx",
-    logo: "/logos/ebryx.png",
+    logo: "./logos/ebryx.png",
     logoClass: "logo-ebryx",
     period: "August 2023 - November 2025",
     role: "Principal Software Engineer",
@@ -103,7 +103,7 @@ const experience = [
   },
   {
     company: "Confiz Limited",
-    logo: "/logos/confiz.png",
+    logo: "./logos/confiz.png",
     logoClass: "logo-confiz",
     period: "March 2014 - July 2023",
     role: "Associate Software Architect",
@@ -118,7 +118,7 @@ const experience = [
   },
   {
     company: "Karzansoft",
-    logo: "/logos/karzansoft.png",
+    logo: "./logos/karzansoft.png",
     logoClass: "logo-karzan",
     period: "August 2013 - March 2014",
     role: "Software Engineer",
@@ -128,7 +128,7 @@ const experience = [
   },
   {
     company: "Code5 Technologies",
-    logo: "/logos/code5.png",
+    logo: "./logos/code5.png",
     logoClass: "logo-code5",
     period: "November 2012 - May 2013",
     role: "Software Engineer",
