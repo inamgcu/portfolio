@@ -173,11 +173,11 @@ const careerStats = [
 ];
 
 const navLinks = [
+  { href: "#experience", label: "Experience" },
   { href: "#services", label: "Strengths" },
   { href: "#style", label: "Style" },
   { href: "#tools", label: "Tools" },
   { href: "#expertise", label: "Expertise" },
-  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#recognition", label: "Recognition" },
   { href: "#contact", label: "Contact" }
@@ -460,6 +460,51 @@ function App() {
         </div>
       </section>
 
+      <section className="section experience-section section-lined" id="experience">
+        <div className="section__intro experience-intro">
+          <h2>Professional experience.</h2>
+        </div>
+        <div className="timeline">
+          {experience.map((job, index) => (
+            <article className="job" key={`${job.company}-${job.role}`}>
+              <div className="job__marker" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
+              <div className="job__header">
+                <div className="job__identity">
+                  <div className={`company-logo ${job.logoClass}`} aria-hidden="true">
+                    <img src={job.logo} alt="" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3>{job.company}</h3>
+                    <p>{job.role}</p>
+                  </div>
+                </div>
+                <div className="job__dates" aria-label={`${job.period}, ${formatExperienceDuration(job)}`}>
+                  <span>{job.period}</span>
+                  <span className="job__duration">{formatExperienceDuration(job)}</span>
+                </div>
+              </div>
+              <p className="job__impact">{job.impact}</p>
+              <ul>
+                {job.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <div className="job__stack">
+                {job.stack.map((item) => {
+                  const Icon = stackIcons[item] ?? Code2;
+                  return (
+                    <span key={item}>
+                      <Icon size={15} aria-hidden="true" />
+                      {item}
+                    </span>
+                  );
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section services" id="services" aria-label="Consulting strengths">
         {serviceLines.map(({ icon: Icon, title, body }) => (
           <article className="service" key={title}>
@@ -565,52 +610,6 @@ function App() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section experience-section section-lined" id="experience">
-        <div className="section__intro experience-intro">
-          <span className="section-kicker">Experience</span>
-          <h2>Professional experience.</h2>
-        </div>
-        <div className="timeline">
-          {experience.map((job, index) => (
-            <article className="job" key={`${job.company}-${job.role}`}>
-              <div className="job__marker" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
-              <div className="job__header">
-                <div className="job__identity">
-                  <div className={`company-logo ${job.logoClass}`} aria-hidden="true">
-                    <img src={job.logo} alt="" loading="lazy" />
-                  </div>
-                  <div>
-                    <h3>{job.company}</h3>
-                    <p>{job.role}</p>
-                  </div>
-                </div>
-                <div className="job__dates" aria-label={`${job.period}, ${formatExperienceDuration(job)}`}>
-                  <span>{job.period}</span>
-                  <span className="job__duration">{formatExperienceDuration(job)}</span>
-                </div>
-              </div>
-              <p className="job__impact">{job.impact}</p>
-              <ul>
-                {job.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <div className="job__stack">
-                {job.stack.map((item) => {
-                  const Icon = stackIcons[item] ?? Code2;
-                  return (
-                    <span key={item}>
-                      <Icon size={15} aria-hidden="true" />
-                      {item}
-                    </span>
-                  );
-                })}
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
