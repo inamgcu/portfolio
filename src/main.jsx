@@ -4,13 +4,10 @@ import {
   ArrowUpRight,
   Award,
   BadgeCheck,
-  Bot,
   BriefcaseBusiness,
   Cloud,
   Code2,
   Database,
-  FileJson,
-  GitBranch,
   Github,
   Lightbulb,
   KanbanSquare,
@@ -21,7 +18,6 @@ import {
   MonitorCog,
   Network,
   Phone,
-  Send,
   ShieldCheck,
   Sparkles,
   Target,
@@ -43,31 +39,39 @@ const profile = {
 };
 
 const competencies = [
-  { icon: Layers3, label: "Solution Design" },
-  { icon: Target, label: "Decision Trade-offs" },
-  { icon: UsersRound, label: "Client Communication" },
-  { icon: Network, label: "API & Integration Design" },
-  { icon: Code2, label: ".NET / ASP.NET Core" },
-  { icon: Cloud, label: "Azure Cloud Solutions" },
-  { icon: Database, label: "SQL Server Performance" },
-  { icon: ShieldCheck, label: "Delivery Governance" }
+  { icon: Layers3, label: "Solution Design", detail: "Business goals, constraints, and clear design direction.", tone: "teal" },
+  { icon: Target, label: "Decision Trade-offs", detail: "Practical choices across quality, cost, risk, and delivery.", tone: "gold" },
+  { icon: UsersRound, label: "Client Communication", detail: "Stakeholder alignment, expectation clarity, and delivery visibility.", tone: "blue" },
+  { icon: Network, label: "API & Integration Design", detail: "Clean API boundaries, workflows, messaging, and integration paths.", tone: "warm" },
+  { icon: Code2, label: ".NET / ASP.NET Core", detail: "Modern C#, Web API, Entity Framework, and service boundaries.", tone: "warm" },
+  { icon: Cloud, label: "Azure Cloud Solutions", detail: "App Services, Functions, Service Bus, API Management, and DevOps.", tone: "blue" },
+  { icon: Database, label: "SQL Server Performance", detail: "Schema design, query tuning, stored procedures, and reporting support.", tone: "teal" },
+  { icon: ShieldCheck, label: "Delivery Governance", detail: "Standards, reviews, supportability, and production confidence.", tone: "gold" }
 ];
 
 const skillGroups = [
   {
     title: "Architecture & Design",
-    items: ["Solution Design", "Requirements Mapping", "API Decomposition", "Integration Design", "Design Reviews", "Technical Roadmaps", "Architecture Decisions", "Stakeholder Communication"]
+    icon: Layers3,
+    summary: "Decision shaping, requirements, API boundaries, and technical direction.",
+    items: ["Solution Design", "Requirements Mapping", "API Decomposition", "Integration Design", "Design Reviews", "Technical Roadmaps", "Architecture Decisions"]
   },
   {
     title: ".NET Engineering",
+    icon: Code2,
+    summary: "Modern C#, ASP.NET Core, Web API, ORM, and service implementation.",
     items: [".NET 8", ".NET Core", "ASP.NET Core", "Web API", "Entity Framework Core", "C#", "REST", "Integration Architecture"]
   },
   {
     title: "Azure & Delivery",
-    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "API Management", "Docker", "Orchestration Fundamentals", "Azure DevOps"]
+    icon: Cloud,
+    summary: "Cloud services, messaging, deployment practices, and DevOps delivery.",
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "API Management", "Docker", "Azure DevOps"]
   },
   {
     title: "Data & Storage",
+    icon: Database,
+    summary: "SQL Server, query tuning, data integration, reporting, and storage thinking.",
     items: ["SQL Server", "T-SQL", "Query Optimization", "Database Design", "Data Integration", "Data Transformation", "NoSQL Concepts", "Power BI"]
   }
 ];
@@ -78,6 +82,7 @@ const experience = [
     logo: "./logos/tkxel.svg",
     logoClass: "logo-tkxel",
     period: "December 2025 - Present",
+    startDate: "2025-12",
     role: "Technology Consultant - .NET",
     impact: "Shaping architecture direction for secure, scalable enterprise platforms with a .NET and Azure lens.",
     stack: ["Solution Design", ".NET Core", "ASP.NET Core", "Azure", "Azure Service Bus", "Azure DevOps", "SQL Server", "CI/CD"],
@@ -92,6 +97,8 @@ const experience = [
     logo: "./logos/ebryx.png",
     logoClass: "logo-ebryx",
     period: "August 2023 - November 2025",
+    startDate: "2023-08",
+    endDate: "2025-11",
     role: "Principal Software Engineer",
     impact: "Owned architecture patterns, technical standards, and client-facing delivery decisions for enterprise .NET 8 applications.",
     stack: [".NET 8", "Clean Architecture", "DDD", "Web API", "Client Communication"],
@@ -106,6 +113,8 @@ const experience = [
     logo: "./logos/confiz.png",
     logoClass: "logo-confiz",
     period: "March 2014 - July 2023",
+    startDate: "2014-03",
+    endDate: "2023-07",
     role: "Associate Software Architect",
     impact: "Progressed from hands-on .NET engineering into architecture ownership across web, API, mobile, cloud, SQL, and data integration systems.",
     stack: ["ASP.NET Core", "Web API", "SQL Server", "Azure", "Data Transformation", "Xamarin"],
@@ -121,6 +130,8 @@ const experience = [
     logo: "./logos/karzansoft.png",
     logoClass: "logo-karzan",
     period: "August 2013 - March 2014",
+    startDate: "2013-08",
+    endDate: "2014-03",
     role: "Software Engineer",
     impact: "Delivered product improvements and support fixes for business-critical leasing workflows.",
     stack: [".NET", "Web Apps", "Windows Apps", "Production Support"],
@@ -131,6 +142,8 @@ const experience = [
     logo: "./logos/code5.png",
     logoClass: "logo-code5",
     period: "November 2012 - May 2013",
+    startDate: "2012-11",
+    endDate: "2013-05",
     role: "Software Engineer",
     impact: "Built an interactive Windows kiosk product with hardware integration and social publishing.",
     stack: ["Windows Kiosk", "DSLR Integration", "Image Filters", "Facebook API"],
@@ -138,10 +151,36 @@ const experience = [
   }
 ];
 
-const outcomes = [
-  { value: "3+", label: "Architecture leadership roles", detail: "Consultant, principal, and architect tracks" },
+const parseMonth = (value) => {
+  const [year, month] = value.split("-").map(Number);
+  return { year, month: month - 1 };
+};
+
+const formatExperienceDuration = ({ startDate, endDate }) => {
+  const start = parseMonth(startDate);
+  const today = new Date();
+  const end = endDate ? parseMonth(endDate) : { year: today.getFullYear(), month: today.getMonth() };
+  const months = Math.max(1, (end.year - start.year) * 12 + (end.month - start.month) + 1);
+  const years = Math.round((months / 12) * 10) / 10;
+  const label = Number.isInteger(years) ? String(years) : years.toFixed(1);
+  return `${label} ${years === 1 ? "Year" : "Years"}`;
+};
+
+const careerStats = [
+  { value: "3", label: "Senior Roles", detail: "Consultant, principal, and architect tracks" },
   { value: "75%", label: "Performance gain", detail: "Legacy workflow modernization" },
   { value: "60%+", label: "Cycle-time reduction", detail: "Enterprise automation and reporting impact" },
+];
+
+const navLinks = [
+  { href: "#services", label: "Strengths" },
+  { href: "#style", label: "Style" },
+  { href: "#tools", label: "Tools" },
+  { href: "#expertise", label: "Expertise" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#recognition", label: "Recognition" },
+  { href: "#contact", label: "Contact" }
 ];
 
 const certifications = [
@@ -233,32 +272,73 @@ const toolGroups = [
   {
     title: "Tools & Platforms",
     icon: Workflow,
+    summary: "Daily workspace for coding, APIs, source control, team knowledge, and AI-assisted delivery.",
     items: ["JIRA", "Confluence", "Git", "GitHub", "Azure DevOps", "SharePoint", "Visual Studio", "Visual Studio Code", "Postman", "Cursor", "Codex"]
   },
   {
     title: "Project Delivery",
     icon: KanbanSquare,
-    items: ["Agile", "Scrum", "Kanban", "Sprint Planning", "Backlog Grooming", "Risk Management", "Cross-functional Leadership"]
+    summary: "Planning and delivery practices used to keep teams aligned, visible, and predictable.",
+    items: ["Agile", "Scrum", "Kanban", "Sprint Planning", "Backlog Grooming", "Risk Management"]
   },
   {
     title: "Cloud Tooling",
     icon: Cloud,
-    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "Data Lake", "Data Factory", "API Management", "Docker"]
+    summary: "Azure services and deployment tooling used across integration, automation, and platform work.",
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "Blob Storage", "Data Lake", "Data Factory", "API Management", "Azure SQL", "Key Vault", "Entra ID", "Docker"]
   }
 ];
 
+const devicon = (path) => `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}`;
+const simpleIcon = (slug) => `https://cdn.simpleicons.org/${slug}`;
+const jsdelivrIcon = (path) => `https://cdn.jsdelivr.net/${path}`;
+
+const productIcons = {
+  "Visual Studio": devicon("visualstudio/visualstudio-original.svg"),
+  "Visual Studio Code": devicon("vscode/vscode-original.svg"),
+  "VS Code": devicon("vscode/vscode-original.svg"),
+  GitHub: devicon("github/github-original.svg"),
+  Git: devicon("git/git-original.svg"),
+  "Azure DevOps": "./logos/tools/azure-devops.svg",
+  JIRA: simpleIcon("jira"),
+  Confluence: simpleIcon("confluence"),
+  Postman: devicon("postman/postman-original.svg"),
+  Cursor: simpleIcon("cursor"),
+  Codex: jsdelivrIcon("npm/@lobehub/icons-static-svg@latest/icons/codex.svg"),
+  SharePoint: jsdelivrIcon("gh/homarr-labs/dashboard-icons/svg/microsoft-sharepoint.svg"),
+  Docker: devicon("docker/docker-original.svg"),
+  Azure: devicon("azure/azure-original.svg")
+};
+
+const azureServiceIcons = {
+  "Azure App Service": "./logos/tools/azure/app-service.svg",
+  "Azure Functions": "./logos/tools/azure/functions.svg",
+  "Service Bus": "./logos/tools/azure/service-bus.svg",
+  "Event Hub": "./logos/tools/azure/event-hub.svg",
+  "Blob Storage": "./logos/tools/azure/blob-storage.svg",
+  "Data Lake": "./logos/tools/azure/data-lake.svg",
+  "Data Factory": "./logos/tools/azure/data-factory.svg",
+  "API Management": "./logos/tools/azure/api-management.svg",
+  "Azure SQL": "./logos/tools/azure/azure-sql.svg",
+  "Key Vault": "./logos/tools/azure/key-vault.svg",
+  "Entra ID": "./logos/tools/azure/entra-id.svg"
+};
+
+const getProductIcon = (item) => productIcons[item] ?? azureServiceIcons[item] ?? null;
+
 const toolHighlights = [
-  { icon: MonitorCog, label: "Visual Studio" },
-  { icon: FileJson, label: "VS Code" },
-  { icon: Github, label: "GitHub" },
-  { icon: GitBranch, label: "Git" },
-  { icon: Workflow, label: "Azure DevOps" },
-  { icon: KanbanSquare, label: "JIRA" },
-  { icon: Layers3, label: "Confluence" },
-  { icon: Send, label: "Postman" },
-  { icon: Sparkles, label: "Cursor" },
-  { icon: Bot, label: "Codex" },
-  { icon: Cloud, label: "SharePoint" }
+  { logo: productIcons["Visual Studio"], label: "Visual Studio", detail: "Primary .NET IDE" },
+  { logo: productIcons["VS Code"], label: "VS Code", detail: "Lightweight editing" },
+  { logo: productIcons.GitHub, label: "GitHub", detail: "Source & portfolio" },
+  { logo: productIcons.Git, label: "Git", detail: "Branching workflow" },
+  { logo: productIcons["Azure DevOps"], label: "Azure DevOps", detail: "Boards & pipelines" },
+  { logo: productIcons.JIRA, label: "JIRA", detail: "Agile tracking" },
+  { logo: productIcons.Confluence, label: "Confluence", detail: "Team knowledge" },
+  { logo: productIcons.Postman, label: "Postman", detail: "API validation" },
+  { logo: productIcons.Cursor, label: "Cursor", detail: "AI-assisted coding" },
+  { logo: productIcons.Codex, label: "Codex", detail: "Code review & tasks" },
+  { logo: productIcons.SharePoint, label: "SharePoint", detail: "Collaboration" },
+  { logo: productIcons.Docker, label: "Docker", detail: "Containerized delivery" }
 ];
 
 const stackIcons = {
@@ -297,9 +377,9 @@ function App() {
           <nav className="topbar" aria-label="Primary navigation">
             <a href="#home" className="brand">Inam Ul Haq</a>
             <div className="navlinks">
-              <a href="#experience">Experience</a>
-              <a href="#skills">Skills</a>
-              <a href={`mailto:${profile.email}`}>Contact</a>
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href}>{link.label}</a>
+              ))}
             </div>
           </nav>
 
@@ -327,7 +407,7 @@ function App() {
                   <span>Integration</span>
                 </div>
               </aside>
-              <div className="contact-canvas" aria-label="Contact information">
+              <div className="contact-canvas" id="contact" aria-label="Contact information">
                 <span className="contact-canvas__heading">Contact</span>
                 <ul className="contact-canvas__items">
                   <li><a href={`mailto:${profile.email}`}><Mail size={15} aria-hidden="true" />{profile.email}</a></li>
@@ -359,18 +439,28 @@ function App() {
         </div>
       </section>
 
-      <section className="metrics" aria-label="Career outcomes">
-        {outcomes.map((item) => (
-          <article className="metric" key={item.label}>
-            <TrendingUp size={20} aria-hidden="true" />
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-            <small>{item.detail}</small>
-          </article>
-        ))}
+      <section className="summary-stats" aria-label="Career summary and stats">
+        <article className="summary-card">
+          <span className="section-kicker">Experience</span>
+          <h2>Architecture ownership.</h2>
+          <p>
+            A track record across stakeholder alignment, architecture decisions, .NET modernization,
+            Azure-backed platforms, API decomposition, SQL performance, and data transformation.
+          </p>
+        </article>
+        <div className="metrics" aria-label="Career stats">
+          {careerStats.map((item) => (
+            <article className="metric" key={item.label}>
+              <TrendingUp size={20} aria-hidden="true" />
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+              <small>{item.detail}</small>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="section services" aria-label="Consulting strengths">
+      <section className="section services" id="services" aria-label="Consulting strengths">
         {serviceLines.map(({ icon: Icon, title, body }) => (
           <article className="service" key={title}>
             <Icon size={24} aria-hidden="true" />
@@ -380,7 +470,7 @@ function App() {
         ))}
       </section>
 
-      <section className="section style-section section-lined">
+      <section className="section style-section section-lined" id="style">
         <div className="section__intro">
           <span className="section-kicker">Working Style</span>
           <h2>Senior engineering judgment, consulting mindset.</h2>
@@ -401,59 +491,87 @@ function App() {
           <span className="section-kicker">Tools & Platforms</span>
           <h2>Code, cloud, collaboration, and AI toolkit.</h2>
         </div>
-        <div className="tool-highlight-grid" aria-label="Tools and platforms">
-          {toolHighlights.map(({ icon: Icon, label }) => (
-            <article className="tool-highlight" key={label}>
-              <Icon size={21} aria-hidden="true" />
-              <span>{label}</span>
-            </article>
-          ))}
+        <div className="tools-showcase">
+          <div className="tool-console" aria-label="Primary engineering toolkit">
+            <div className="tool-console__header">
+              <strong>Microsoft-first engineering with practical AI assistance</strong>
+            </div>
+            <div className="tool-highlight-grid" aria-label="Tools and platforms">
+              {toolHighlights.map(({ logo, label, detail }) => (
+                <article className="tool-highlight" key={label}>
+                  <img className="product-logo product-logo--highlight" src={logo} alt="" loading="lazy" aria-hidden="true" />
+                  <div>
+                    <strong>{label}</strong>
+                    <span>{detail}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="tools-grid">
           {toolGroups.map(({ icon: Icon, ...group }) => (
             <article className="tool-card" key={group.title}>
-              <Icon size={22} aria-hidden="true" />
-              <h3>{group.title}</h3>
+              <div className="tool-card__head">
+                <Icon size={22} aria-hidden="true" />
+                <div>
+                  <h3>{group.title}</h3>
+                  <p>{group.summary}</p>
+                </div>
+              </div>
               <div className="tags">
-                {group.items.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
+                {group.items.map((item) => {
+                  const logo = getProductIcon(item);
+                  return (
+                    <span key={item}>
+                      {logo && <img className="product-logo product-logo--tag" src={logo} alt="" loading="lazy" aria-hidden="true" />}
+                      {item}
+                    </span>
+                  );
+                })}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section-lined" id="expertise">
+      <section className="section competencies-section section-lined" id="expertise">
         <div className="section__intro">
           <span className="section-kicker">Core Competencies</span>
           <h2>Architecture leadership with hands-on depth.</h2>
         </div>
-        <div className="competency-grid">
-          {competencies.map(({ icon: Icon, label }) => (
-            <article className="competency" key={label}>
-              <Icon size={22} aria-hidden="true" />
-              <span>{label}</span>
-            </article>
-          ))}
+        <div className="competency-layout">
+          <article className="competency-lead">
+            <span className="competency-lead__icon">
+              <Layers3 size={26} aria-hidden="true" />
+            </span>
+            <span className="competency-lead__kicker">Architecture focus</span>
+            <h3>.NET, Azure, SQL, and integration decisions.</h3>
+            <p>
+              Hands-on technical leadership across enterprise applications, cloud services,
+              API boundaries, data platforms, and delivery standards.
+            </p>
+          </article>
+          <div className="competency-grid">
+            {competencies.map(({ icon: Icon, label, detail, tone }) => (
+              <article className={`competency competency--${tone}`} key={label}>
+                <span className="competency__icon">
+                  <Icon size={20} aria-hidden="true" />
+                </span>
+                <div>
+                  <h3>{label}</h3>
+                  <p>{detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section experience-section section-lined" id="experience">
-        <div className="experience-panel">
-          <div className="section__intro sticky">
-            <span className="section-kicker">Experience</span>
-            <h2>Architecture ownership.</h2>
-            <p>
-              A track record across stakeholder alignment, architecture decisions, .NET modernization,
-              Azure-backed platforms, API decomposition, SQL performance, and data transformation.
-            </p>
-          </div>
-          <div className="experience-stats" aria-label="Experience highlights">
-            <span><strong>5</strong> Companies</span>
-            <span><strong>10+</strong> Years</span>
-            <span><strong>3</strong> Senior Roles</span>
-          </div>
+        <div className="section__intro experience-intro">
+          <span className="section-kicker">Experience</span>
+          <h2>Professional experience.</h2>
         </div>
         <div className="timeline">
           {experience.map((job, index) => (
@@ -469,7 +587,10 @@ function App() {
                     <p>{job.role}</p>
                   </div>
                 </div>
-                <span>{job.period}</span>
+                <div className="job__dates" aria-label={`${job.period}, ${formatExperienceDuration(job)}`}>
+                  <span>{job.period}</span>
+                  <span className="job__duration">{formatExperienceDuration(job)}</span>
+                </div>
               </div>
               <p className="job__impact">{job.impact}</p>
               <ul>
@@ -498,21 +619,43 @@ function App() {
           <span className="section-kicker">Technical Skills</span>
           <h2>.NET, Azure, SQL, APIs, and delivery governance.</h2>
         </div>
-        <div className="skills-grid">
-          {skillGroups.map((group) => (
-            <article className="skill-card" key={group.title}>
-              <h3>{group.title}</h3>
-              <div className="tags">
-                {group.items.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
+        <div className="skills-dashboard">
+          <aside className="skills-lead" aria-label="Engineering toolkit overview">
+            <MonitorCog size={25} aria-hidden="true" />
+            <span className="skills-lead__kicker">Engineering toolkit</span>
+            <h3>.NET delivery toolkit.</h3>
+            <p>
+              Strongest around .NET, Azure integrations, SQL Server performance,
+              API design, and delivery governance.
+            </p>
+            <div className="skills-lead__stack">
+              {[".NET", "Azure", "SQL Server", "Web API", "Azure DevOps"].map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </aside>
+          <div className="skills-grid">
+            {skillGroups.map(({ icon: Icon, ...group }) => (
+              <article className="skill-card" key={group.title}>
+                <div className="skill-card__head">
+                  <span><Icon size={18} aria-hidden="true" /></span>
+                  <div>
+                    <h3>{group.title}</h3>
+                    <p>{group.summary}</p>
+                  </div>
+                </div>
+                <div className="tags">
+                  {group.items.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section proof section-lined">
+      <section className="section proof section-lined" id="recognition">
         <article>
           <Award size={24} aria-hidden="true" />
           <h2>Recognition & Certifications</h2>
