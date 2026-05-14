@@ -8,6 +8,7 @@ import {
   Cloud,
   Code2,
   Database,
+  FileText,
   Github,
   Lightbulb,
   KanbanSquare,
@@ -34,6 +35,7 @@ const profile = {
   phone: "+92-322-8002441",
   email: "inamgcu@gmail.com",
   linkedin: "https://www.linkedin.com/in/hafiz-inam-ul-haq-605b611a/",
+  cv: "./cv.pdf",
   summary:
     "10+ years designing enterprise .NET, Azure, SQL, integration, and data platforms."
 };
@@ -66,7 +68,7 @@ const skillGroups = [
     title: "Azure & Delivery",
     icon: Cloud,
     summary: "Cloud services, messaging, deployment practices, and DevOps delivery.",
-    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "API Management", "Docker", "Azure DevOps"]
+    items: ["Azure App Service", "Azure Functions", "Service Bus", "Event Hub", "API Management", "Azure SQL", "Blob Storage", "Docker", "Azure DevOps"]
   },
   {
     title: "Data & Storage",
@@ -380,6 +382,7 @@ function App() {
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href}>{link.label}</a>
               ))}
+              <a href={profile.cv} target="_blank" rel="noreferrer">CV</a>
             </div>
           </nav>
 
@@ -416,6 +419,13 @@ function App() {
                     <a href={profile.linkedin} target="_blank" rel="noreferrer">
                       <Linkedin size={15} aria-hidden="true" />
                       LinkedIn
+                      <ArrowUpRight size={13} aria-hidden="true" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href={profile.cv} target="_blank" rel="noreferrer">
+                      <FileText size={15} aria-hidden="true" />
+                      View CV
                       <ArrowUpRight size={13} aria-hidden="true" />
                     </a>
                   </li>
